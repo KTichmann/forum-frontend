@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import Form from "../components/form"
 
-class SignUpPage extends React.Component{
+class LogInPage extends React.Component{
     constructor(props){
         super(props);
         this.state = {
@@ -33,7 +33,7 @@ class SignUpPage extends React.Component{
         }
 
         if(password && username){
-            let url = 'https://ktichmann-forum-api.herokuapp.com/user/sign-up'
+            let url = 'https://ktichmann-forum-api.herokuapp.com/user/authenticate'
             let data = `username=${username}&password=${password}`
 
             fetch(url, {
@@ -46,15 +46,13 @@ class SignUpPage extends React.Component{
             .then(res => res.json())
             .then(res => {
                 if(res.success){
-                    window.location.href = '/log-in?signup=true'
-                } else if(res.message === 'username taken'){
-                    this.setState({
-                        usernameError: true,
-                        usernameErrorMessage: 'Username Taken'
-                    })
+                    window.sessionStorage.setItem(token, res.token)
+                    window.location.href = "/"
                 } else {
                     this.setState({
-                        usernameErrorMessage: 'There was a problem signing you up'
+                        usernameError: true,
+                        passwordError: true,
+                        usernameErrorMessage: "Username or Password Incorrect"
                     })
                 }
             })
@@ -64,11 +62,11 @@ class SignUpPage extends React.Component{
     render(){
         return (
             <Layout>
-                <h1>Sign Up</h1>
+                <h1>Log In</h1>
                 <Form usernameError={this.state.usernameError} passwordError={this.state.passwordError} usernameErrorMessage={this.state.usernameErrorMessage} passwordErrorMessage={this.state.passwordErrorMessage} handleClick={this.handleClick}/>
             </Layout>
         )
     }
 }
   
-  export default SignUpPage
+export default LogInPage
