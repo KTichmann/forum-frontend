@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+.post{
+    font-family: 'Nunito', sans-serif;
+}
+
+.post .title{
+    font-weight: 600;
+}

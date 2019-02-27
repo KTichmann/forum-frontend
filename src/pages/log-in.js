@@ -46,7 +46,7 @@ class LogInPage extends React.Component{
             .then(res => res.json())
             .then(res => {
                 if(res.success){
-                    window.sessionStorage.setItem(token, res.token)
+                    window.sessionStorage.setItem('token', res.token)
                     window.location.href = "/"
                 } else {
                     this.setState({
