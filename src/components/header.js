@@ -16,21 +16,20 @@ const Header = ({ siteTitle }) => {
 
   return(
   <header>
-    <div class="container">
+    <div className="container">
       <div className="left">
         <div className="logo">
-          Forummm
+          FOR'M
         </div>
-        <div>
-          <Link to="#">Link</Link>
-          <Link to="#">Link</Link>
-          <Link to="#">Link</Link>
-          <Link to="#">Link</Link>
+        <div className="menu">
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="#">Profile</Link>
         </div>
       </div>
-      <div>
-        Sign Up
-        Log In
+      <div className="menu">
+        <Link to="/sign-up">Sign Up</Link>
+        <Link to="/log-in">Log In</Link>
       </div>
     </div>
   </header>

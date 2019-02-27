@@ -5,7 +5,13 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@dicebear/avatars": "^3.0.6",
+    "@dicebear/avatars-avataaars-sprites": "^1.0.9",
+    "@dicebear/avatars-gridy-sprites": "^1.0.11",
+    "@dicebear/avatars-male-sprites": "^2.0.6",
+    "@fortawesome/free-regular-svg-icons": "^5.7.2",
     "@material-ui/core": "^3.9.2",
+    "font-awesome": "^4.7.0",
     "gatsby": "^2.1.18",
     "gatsby-image": "^2.0.30",
     "gatsby-plugin-manifest": "^2.0.19",
@@ -21,6 +27,7 @@
     "react-helmet": "^5.2.0"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.7.2",
     "prettier": "^1.16.4"
   },
   "keywords": [

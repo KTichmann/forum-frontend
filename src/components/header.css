@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
 header{
     width: 100%;
-    height: 50px;
+    height: 52px;
     border-bottom: 1px solid #e7edf3;
     background-color: #fff;
     position: fixed;
     transition: all .2s;
+    z-index: 100;
 }
 header.shadow{
     transition: all .2s;
@@ -21,12 +23,13 @@ header.shadow{
     justify-content: space-between;
 }
 header .container .logo{
-    font-family: 'Lobster', sans-serif;
-    font-size: 44px;
-    background: -webkit-linear-gradient(#eee, #333);
-    background-clip: text;
+    font-weight: 600;
+    font-family: 'Ubuntu', sans-serif;
+    background: linear-gradient(to right, #30CFD0 0%, #113af1 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-size: 34px;
 }
 
 header .left{
@@ -34,4 +37,22 @@ header .left{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: 30px;
+}
+.menu a{
+    font-size: 13px;
+    padding-right: 25px;
+    color: #667d99 !important;
+    text-decoration: none !important;
+}
+
+.menu a:hover{
+    color: #113af1 !important;
+    transition: all .3s;
 }
