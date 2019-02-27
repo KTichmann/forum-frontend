@@ -1,35 +1,40 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import './header.css'
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+const Header = ({ siteTitle }) => {
+  
+  window.addEventListener('scroll', () => {
+    let header = document.querySelector('header')
+    if(window.pageYOffset === 0){
+      header.classList.remove('shadow');
+    } else if(!header.classList.contains('shadow')){
+      header.classList.add('shadow');
+    }
+  })
+
+  return(
+  <header>
+    <div class="container">
+      <div className="left">
+        <div className="logo">
+          Forummm
+        </div>
+        <div>
+          <Link to="#">Link</Link>
+          <Link to="#">Link</Link>
+          <Link to="#">Link</Link>
+          <Link to="#">Link</Link>
+        </div>
+      </div>
+      <div>
+        Sign Up
+        Log In
+      </div>
     </div>
   </header>
-)
+)}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

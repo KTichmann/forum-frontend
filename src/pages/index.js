@@ -51,7 +51,6 @@ class IndexPage extends React.Component{
   render(){
     return(
       <Layout title="Index">
-        <h1>PostTopia</h1>
         {this.preparePosts(this.state.data)}
       </Layout>
     )
