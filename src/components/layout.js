@@ -27,7 +27,7 @@ const Layout = ({ children }) => (
             paddingTop: 0,
           }}
         >
-          <main>{children}</main>
+          <main style={{paddingTop: '100px'}}>{children}</main>
           <footer>
             
           </footer>

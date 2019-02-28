@@ -13,7 +13,7 @@ let avatars = new Avatars(sprites(options));
 const PostList = (props) => {
     const mainStyles = {
         display: 'flex',
-        justifyContent: 'space-between',
+        justifyContent: 'space-around',
     }
     return (
     <div className="post" style={mainStyles}>
@@ -27,9 +27,9 @@ const PostList = (props) => {
         </div>
         <div style={{display: 'flex', flexDirection: 'row'}}>
             <div style={{fontSize: '14px', fontWeight: '600', marginRight: '10px', fontFamily: 'Ubuntu', marginTop: '-2px'}}>{props.commentCount}</div>
-            <img style={{width: '20px', height: '20px'}} src={commentIcon}/>
+            <img alt="comments" style={{width: '20px', height: '20px'}} src={commentIcon}/>
             <div style={{fontSize: '14px', fontWeight: '600', marginLeft: '20px', marginRight: '10px', fontFamily: 'Ubuntu', marginTop: '-2px'}}>{props.likes}</div>
-            <img style={{width: '20px', height: '20px'}} src={likesIcon}/>
+            <img alt="likes" style={{width: '20px', height: '20px'}} src={likesIcon}/>
         </div>
     </div>
 )}
