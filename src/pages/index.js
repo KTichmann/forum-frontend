@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import PostList from '../components/postList'
 import Layout from "../components/layout"
 class IndexPage extends React.Component{
@@ -85,7 +84,6 @@ class IndexPage extends React.Component{
     return(
       <Layout title="Index">
         {this.preparePosts(this.state.data)}
-        <Link to="/post" state={{post_id: 1}}>Testing Posts</Link>
       </Layout>
     )
   }

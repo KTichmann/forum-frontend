@@ -7,10 +7,12 @@ const Header = ({ siteTitle }) => {
   
   window.addEventListener('scroll', () => {
     let header = document.querySelector('header')
-    if(window.pageYOffset === 0){
-      header.classList.remove('shadow');
-    } else if(!header.classList.contains('shadow')){
-      header.classList.add('shadow');
+    if(header){
+      if(window.pageYOffset === 0){
+        header.classList.remove('shadow');
+      } else if(!header.classList.contains('shadow')){
+        header.classList.add('shadow');
+      }
     }
   })
 

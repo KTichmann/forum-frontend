@@ -27,7 +27,7 @@ class PostPage extends React.Component{
         this.getPostData();
         this.getCommentData();
         this.getCommentLikes();
-        // this.getPostLikes();
+        this.getPostLikes();
     }
 
     getPostData(){
@@ -58,17 +58,62 @@ class PostPage extends React.Component{
                 this.setState({
                     comments: res.data
                 })
+            } else {
+                //TODO: handle error
             }
-            //TODO: else block & catch errors
+        })
+        .catch(error => {
+            console.log(error)
+            //TODO: handle error somehow
         })
     }
 
+    getCommentLikes(){
+        const url = `https://ktichmann-forum-api.herokuapp.com/likes/comments`
 
+        fetch(url)
+        .then(res => res.json())
+        .then(res => {
+            if(res.success){
+                this.setState({
+                    commentLikes: res.data
+                })
+            } else {
+                //TODO: handle error
+            }
+        })
+        .catch(error => {
+            console.log(error)
+            //TODO: handle error
+        })
+    }
+
+    getPostLikes(){
+        const url = `https://ktichmann-forum-api.herokuapp.com/likes/posts`
+
+        fetch(url)
+        .then(res => res.json())
+        .then(res => {
+            if(res.success){
+                let postLikeObj = res.data.filter(obj => obj.id === this.post_id);
+                this.setState({
+                    postLikes: postLikeObj[0].count
+                })
+            } else {
+                //TODO: handle error
+            }
+        })
+        .catch(error => {
+            console.log(error)
+            //TODO: handle error
+        })
+    }
 
     render(){
         return(
             <Layout>
-                {this.state.postExists ? <PostView /> : <NoPostView />}
+                {this.state.postExists ? 
+                <PostView post={this.state.post} comments={this.state.comments} commentLikes={this.state.commentLikes} postLikes={this.state.postLikes} /> : <NoPostView />}
             </Layout>
         )
     }
