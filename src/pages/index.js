@@ -1,6 +1,8 @@
 import React from "react"
-import PostList from '../components/postList'
+import ContentList from '../components/contentList'
 import Layout from "../components/layout"
+import { Link } from 'gatsby'; 
+
 class IndexPage extends React.Component{
   constructor(props){
     super(props)
@@ -11,6 +13,7 @@ class IndexPage extends React.Component{
       likes: []
     }
   }
+
 
   componentWillMount(){
     this.setPosts();
@@ -34,15 +37,19 @@ class IndexPage extends React.Component{
     const sortedPostArr = postArr.sort((first, second) => {
       return second.post_id - first.post_id;
     })
-    const preparedPostArr = sortedPostArr.map(postObj => (<PostList 
-      id={postObj.post_id} 
-      username={postObj.username} 
-      post={postObj.post} 
-      title={postObj.title} 
-      date={postObj.created_at} 
-      commentCount={this.state.comments.filter(num => num === postObj.post_id).length} 
-      likes = {this.getLikeCount(postObj.post_id, this.state.likes)}
-      />))
+    const preparedPostArr = sortedPostArr.map(postObj => (
+      <Link to={`/post`} state={{post_id: postObj.post_id}} style={{textDecoration: 'none'}}>
+        <ContentList 
+          id={postObj.post_id} 
+          username={postObj.username} 
+          content={postObj.post.substring(0, 175)} 
+          title={postObj.title} 
+          date={postObj.created_at} 
+          commentCount={this.state.comments.filter(num => num === postObj.post_id).length} 
+          likes = {this.getLikeCount(postObj.post_id, this.state.likes)}
+          />
+        </Link>
+      ))
 
     return preparedPostArr;
   }

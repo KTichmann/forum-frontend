@@ -1,31 +1,31 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 @import url('https://use.fontawesome.com/releases/v5.7.2/css/all.css');
 
-.post{
+.content{
     font-family: 'Nunito', sans-serif;
     margin-bottom: 30px;
     padding: 30px;
     border-radius: 2px;
 }
 
-.post:hover {
+.content:hover {
     background-color: rgba(99, 147, 235, 0.1);
     transition: all .3s;
     box-shadow: 0.1px 0.1px 5px 0.1px rgba(0,0,0,0.15);
 }
 
-.post .title{
+.content .title{
     font-weight: 300;
 }
 
-.post .time{
+.content .time{
     font-size: 14px;
     margin-top: -4px;
     color: #aaa;
     font-weight: 600;
 }
 
-.post .postContent{
+.content .mainContent{
     color: #aaa;
     font-size: 14px;
     width: 700px;

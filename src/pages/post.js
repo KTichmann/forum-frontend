@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "../components/layout";
 import PostView from "../components/postView";
 import NoPostView from "../components/noPostView";
-
+import ContentList from "../components/contentList"
 class PostPage extends React.Component{
     constructor(props){
         super(props)
@@ -109,11 +109,27 @@ class PostPage extends React.Component{
         })
     }
 
+    formatComments(commentArr){
+        return commentArr.map(commentObj => {
+            return <ContentList id={commentObj.comment_id} content={commentObj.comment} username={commentObj.username} date={commentObj.created_at}/>
+        })
+
+        /* 
+            "comment_id": 1,
+            "comment": "First!",
+            "username": "bobby",
+            "post_id": 1,
+            "created_at": "2019-02-25T16:46:09.992Z"
+        */
+    }
+
     render(){
         return(
             <Layout>
                 {this.state.postExists ? 
-                <PostView post={this.state.post} comments={this.state.comments} commentLikes={this.state.commentLikes} postLikes={this.state.postLikes} /> : <NoPostView />}
+                <PostView post={this.state.post} commentLikes={this.state.commentLikes} postLikes={this.state.postLikes} /> : 
+                <NoPostView />}
+                { this.formatComments(this.state.comments) }
             </Layout>
         )
     }
