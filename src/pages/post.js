@@ -2,12 +2,14 @@ import React from "react";
 import Layout from "../components/layout";
 import PostView from "../components/postView";
 import NoPostView from "../components/noPostView";
-import ContentList from "../components/contentList"
+import ContentList from "../components/contentList";
+import "../components/loader.css"
+
 class PostPage extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            post: {},
+            post: false,
             comments: [],
             commentLikes: [],
             postLikes: 0,
@@ -111,24 +113,17 @@ class PostPage extends React.Component{
 
     formatComments(commentArr){
         return commentArr.map(commentObj => {
-            return <ContentList id={commentObj.comment_id} content={commentObj.comment} username={commentObj.username} date={commentObj.created_at}/>
+            console.log(this.state.commentLikes.filter(obj => obj.id === 1))
+            return <ContentList id={commentObj.comment_id} content={commentObj.comment} username={commentObj.username} date={commentObj.created_at} likes={this.state.commentLikes.filter(obj => obj.id === commentObj.comment_id)[0] ? this.state.commentLikes.filter(obj => obj.id === commentObj.comment_id)[0].count : 0}/>
         })
-
-        /* 
-            "comment_id": 1,
-            "comment": "First!",
-            "username": "bobby",
-            "post_id": 1,
-            "created_at": "2019-02-25T16:46:09.992Z"
-        */
     }
 
     render(){
         return(
             <Layout>
-                {this.state.postExists ? 
+                { this.state.post ? (this.state.postExists ? 
                 <PostView post={this.state.post} commentLikes={this.state.commentLikes} postLikes={this.state.postLikes} /> : 
-                <NoPostView />}
+                <NoPostView />) : <div className="loader">Loading...</div> }
                 { this.formatComments(this.state.comments) }
             </Layout>
         )

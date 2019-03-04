@@ -47,6 +47,7 @@ class IndexPage extends React.Component{
           date={postObj.created_at} 
           commentCount={this.state.comments.filter(num => num === postObj.post_id).length} 
           likes = {this.getLikeCount(postObj.post_id, this.state.likes)}
+          hover = {true}
           />
         </Link>
       ))
@@ -88,8 +89,35 @@ class IndexPage extends React.Component{
   }
 
   render(){
+    const topStyles = {
+      textDecoration: 'none',
+      color: 'white',
+      backgroundColor: '#113af1',
+      padding: '10px 45px',
+      fontSize: '14px',
+      fontFamily: 'Ubuntu',
+      fontWeight: '600',
+      borderRadius: '5px'
+    }
+    const selectStyles = {
+      backgroundColor: 'rgba(0,100,200,.2)',
+      borderRadius: '5px',
+      textAlignLast: 'center',
+      fontFamily: 'Ubuntu',
+      fontSize: '14px',
+      border: 'none'
+    }
     return(
-      <Layout title="Index">
+      <Layout title="For'm">
+        <div style={{marginBottom: '30px', display: 'flex', justifyContent: 'space-between'}}>
+          <Link style={topStyles}>Start a Discussion</Link>
+          <select style={selectStyles}>
+            <option value="title">Title</option>
+            <option value="date">Date</option>
+            <option value="likes">Likes</option>
+            <option value="comments">Comments</option>
+          </select>
+        </div>
         {this.preparePosts(this.state.data)}
       </Layout>
     )

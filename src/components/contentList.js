@@ -15,8 +15,9 @@ const ContentList = (props) => {
         display: 'flex',
         justifyContent: 'space-around',
     }
+
     return (
-        <div className="content" style={mainStyles}>
+        <div className={`content ${props.hover ? 'hover' : ''}`} style={mainStyles}>
             <div style={{paddingLeft: '10px', display: 'flex', flexDirection: 'row'}}>
                 <div style={{width: '40px', height: '40px', borderRadius: '50%'}} dangerouslySetInnerHTML={{__html: avatars.create(props.username)}}></div>
                 <div style={{flexDirection: 'column', marginLeft: '25px'}}>

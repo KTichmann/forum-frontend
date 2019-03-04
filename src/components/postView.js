@@ -2,6 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import Avatars from '@dicebear/avatars';
 import sprites from '@dicebear/avatars-male-sprites';
+import likesIcon from '../images/likes.png';
 
 const PostView = (props) => {
     let options = {}
@@ -13,14 +14,20 @@ const PostView = (props) => {
             <div style={{ display: 'flex' }}>
                 <div style={{width: '40px', height: '40px', borderRadius: '50%'}} dangerouslySetInnerHTML={{__html: avatars.create(props.post.username)}}></div>
                 <div style={{ marginLeft: '25px' }}>
-                    <div style={{ paddingTop: '10px', fontFamily: 'Ubuntu', fontSize: '16px', fontWeight: '600' }}>{props.post.username} <span style={{fontSize: '16px', fontWeight: '400', color: 'rgba(0,0,0,.6)', marginLeft: '10px' }}>{moment(props.post.created_at).fromNow()}</span></div>
+                    <div style={{ paddingTop: '10px', fontFamily: 'Ubuntu', fontSize: '16px', fontWeight: '600', display: 'flex', justifyContent: 'space-between' }}>
+                        <div>
+                            {props.post.username} <span style={{fontSize: '16px', fontWeight: '400', color: 'rgba(0,0,0,.6)', marginLeft: '10px' }}>{moment(props.post.created_at).fromNow()}</span>
+                        </div>
+                        <div style={{display: "flex", }}>
+                            <span style={{marginRight: "8px"}}>{props.postLikes}</span><img alt="likes" style={{width: '20px', height: '20px', marginTop: "1px"}} src={likesIcon}/>
+                        </div>
+                    </div>
 
                     <div style={{  margin: '10px', marginLeft: '12px', fontFamily: 'Ubuntu', fontSize: '16px', width: '800px' }}>
                         {props.post.post}
                     </div>
                 </div>
             </div>
-            <p>{props.postLikes}</p>
         </div>
     )
 }

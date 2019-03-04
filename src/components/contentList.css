@@ -8,12 +8,6 @@
     border-radius: 2px;
 }
 
-.content:hover {
-    background-color: rgba(99, 147, 235, 0.1);
-    transition: all .3s;
-    box-shadow: 0.1px 0.1px 5px 0.1px rgba(0,0,0,0.15);
-}
-
 .content .title{
     font-weight: 300;
 }
@@ -29,4 +23,10 @@
     color: #aaa;
     font-size: 14px;
     width: 700px;
+}
+
+.hover:hover {
+  background-color: rgba(99, 147, 235, 0.1);
+  transition: all .3s;
+  box-shadow: 0.1px 0.1px 5px 0.1px rgba(0,0,0,0.15);
 }
