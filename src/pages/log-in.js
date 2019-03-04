@@ -63,7 +63,7 @@ class LogInPage extends React.Component{
         return (
             <Layout>
                 <h1>Log In</h1>
-                <Form usernameError={this.state.usernameError} passwordError={this.state.passwordError} usernameErrorMessage={this.state.usernameErrorMessage} passwordErrorMessage={this.state.passwordErrorMessage} handleClick={this.handleClick}/>
+                <Form usernameError={this.state.usernameError} passwordError={this.state.passwordError} usernameErrorMessage={this.state.usernameErrorMessage} passwordErrorMessage={this.state.passwordErrorMessage} handleClick={this.handleClick} buttonText="Log In"/>
             </Layout>
         )
     }

@@ -65,7 +65,7 @@ class SignUpPage extends React.Component{
         return (
             <Layout>
                 <h1>Sign Up</h1>
-                <Form usernameError={this.state.usernameError} passwordError={this.state.passwordError} usernameErrorMessage={this.state.usernameErrorMessage} passwordErrorMessage={this.state.passwordErrorMessage} handleClick={this.handleClick}/>
+                <Form usernameError={this.state.usernameError} passwordError={this.state.passwordError} usernameErrorMessage={this.state.usernameErrorMessage} passwordErrorMessage={this.state.passwordErrorMessage} handleClick={this.handleClick} buttonText="Sign Up"/>
             </Layout>
         )
     }
