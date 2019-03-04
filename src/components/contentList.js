@@ -17,7 +17,7 @@ const ContentList = (props) => {
     }
 
     return (
-        <div className={`content ${props.hover ? 'hover' : ''}`} style={mainStyles}>
+        <div id={props.id} className={`content ${props.hover ? 'hover' : ''}`} style={mainStyles}>
             <div style={{paddingLeft: '10px', display: 'flex', flexDirection: 'row'}}>
                 <div style={{width: '40px', height: '40px', borderRadius: '50%'}} dangerouslySetInnerHTML={{__html: avatars.create(props.username)}}></div>
                 <div style={{flexDirection: 'column', marginLeft: '25px'}}>
@@ -26,15 +26,13 @@ const ContentList = (props) => {
                     <div className="mainContent">{props.content}</div>
                 </div>
             </div>
-            <div style={{display: 'flex', flexDirection: 'row'}}>
+            <div className="likes" style={{display: 'flex', flexDirection: 'row'}} onClick={() => props.likeHandler ? props.likeHandler(props.id) : false}>
                 {props.commentCount ? 
-                    [<div style={{fontSize: '14px', fontWeight: '600', marginRight: '10px', fontFamily: 'Ubuntu', marginTop: '-2px'}}>{props.commentCount}</div>, <img alt='comments' style={{width: '20px', height: '20px'}} src={commentIcon}/>] :
+                    [<div style={{fontSize: '14px', fontWeight: '600', marginRight: '10px', fontFamily: 'Ubuntu', marginTop: '-2px'}}>{props.commentCount}</div>, <img alt='comments' classname="likeImg" style={{width: '20px', height: '20px'}} src={commentIcon}/>] :
                     false
                 }
-                <div className="likes" onClick={() => props.likeHandler ? props.likeHandler(props.id) : false}>
                     <div style={{fontSize: '14px', fontWeight: '600', marginLeft: '20px', marginRight: '10px', fontFamily: 'Ubuntu', marginTop: '-2px'}}>{props.likes ? props.likes : 0}</div>
-                    <img alt="likes" style={{width: '20px', height: '20px'}} src={likesIcon}/>
-                </div>
+                    <img alt="likes" className="likeImg" style={{width: '20px', height: '20px'}} src={likesIcon}/>
             </div>
         </div>
 )}
