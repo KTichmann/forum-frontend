@@ -31,8 +31,10 @@ const ContentList = (props) => {
                     [<div style={{fontSize: '14px', fontWeight: '600', marginRight: '10px', fontFamily: 'Ubuntu', marginTop: '-2px'}}>{props.commentCount}</div>, <img alt='comments' style={{width: '20px', height: '20px'}} src={commentIcon}/>] :
                     false
                 }
-                <div style={{fontSize: '14px', fontWeight: '600', marginLeft: '20px', marginRight: '10px', fontFamily: 'Ubuntu', marginTop: '-2px'}}>{props.likes}</div>
-                <img alt="likes" style={{width: '20px', height: '20px'}} src={likesIcon}/>
+                <div className="likes" onClick={() => props.likeHandler ? props.likeHandler(props.id) : false}>
+                    <div style={{fontSize: '14px', fontWeight: '600', marginLeft: '20px', marginRight: '10px', fontFamily: 'Ubuntu', marginTop: '-2px'}}>{props.likes ? props.likes : 0}</div>
+                    <img alt="likes" style={{width: '20px', height: '20px'}} src={likesIcon}/>
+                </div>
             </div>
         </div>
 )}

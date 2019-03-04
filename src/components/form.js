@@ -23,7 +23,7 @@ const Form = (props) => (
             variant="outlined"
             error={props.passwordError}
         />
-        <Button variant="contained" color="primary" type="submit" onClick={(e) => props.handleClick(e)}>Sign Up</Button>
+        <Button variant="contained" color="primary" type="submit" onClick={(e) => props.handleClick(e)}>{props.buttonText}</Button>
     </form>
 )
 
