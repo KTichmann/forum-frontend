@@ -13,6 +13,10 @@ class PostPage extends React.Component{
             postLikes: 0,
             postExists: true
         }
+
+        this.likeHandler = this.likeHandler.bind(this);
+        this.getCommentData = this.getCommentData.bind(this);
+        this.formatComments = this.formatComments.bind(this);
     }
 
     componentWillMount(){
@@ -26,7 +30,6 @@ class PostPage extends React.Component{
 
         this.getPostData();
         this.getCommentData();
-        this.getCommentLikes();
         this.getPostLikes();
     }
 
@@ -58,6 +61,8 @@ class PostPage extends React.Component{
                 this.setState({
                     comments: res.data
                 })
+
+                this.getCommentLikes();
             } else {
                 //TODO: handle error
             }
@@ -69,8 +74,9 @@ class PostPage extends React.Component{
     }
 
     getCommentLikes(){
-        const url = `https://ktichmann-forum-api.herokuapp.com/likes/comments`
-
+        let comments = this.state.comments.map(commentObj => commentObj.comment_id)
+        let commentString = comments.join('&')
+        const url = `https://ktichmann-forum-api.herokuapp.com/likes/comments/${commentString}`
         fetch(url)
         .then(res => res.json())
         .then(res => {
@@ -89,15 +95,14 @@ class PostPage extends React.Component{
     }
 
     getPostLikes(){
-        const url = `https://ktichmann-forum-api.herokuapp.com/likes/posts`
+        const url = `https://ktichmann-forum-api.herokuapp.com/likes/posts/${this.post_id}`
 
         fetch(url)
         .then(res => res.json())
         .then(res => {
             if(res.success){
-                let postLikeObj = res.data.filter(obj => obj.id === this.post_id);
                 this.setState({
-                    postLikes: postLikeObj[0].count
+                    postLikes: res.data.length > 0 ? res.data[0].count : 0
                 })
             } else {
                 //TODO: handle error
@@ -109,18 +114,58 @@ class PostPage extends React.Component{
         })
     }
 
+    likeHandler(id){
+        let likes = document.querySelector('.likes')
+        if(likes.classList.contains('likeAdded')){
+            likes.classList.remove('likeAdded');
+
+            const url = "https://ktichmann-forum-api.herokuapp.com/likes/remove"
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Authorization': sessionStorage.getItem('token')
+                },
+                body: `type=comment&id=${id}`
+            })
+            .then(res => res.json()).then(res => {
+                this.setState(prevState => ({
+                    commentLikes: prevState.commentLikes.map(likeObj => {if(likeObj.id === id){return {...likeObj, count: parseInt(likeObj.count) - 1}} else { return likeObj }})
+                }))
+            })
+            .catch(error => console.log(error) 
+                //TODO: Handle error
+            )
+        } else{
+            likes.classList.add('likeAdded');
+
+            console.log(id)
+            const url = "https://ktichmann-forum-api.herokuapp.com/likes/add"
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Authorization': sessionStorage.getItem('token')
+                },
+                body: `type=comment&id=${id}`
+            })
+            .then(res => res.json()).then(res => {
+                if(res.success){
+                    this.setState(prevState => ({
+                        commentLikes: prevState.commentLikes.map(likeObj => {if(likeObj.id === id){return {...likeObj, count: parseInt(likeObj.count) + 1}} else { return likeObj }})
+                    }))
+                }
+            })
+            .catch(error => console.log(error) 
+                //TODO: Handle error
+            )
+        }
+    }
+
     formatComments(commentArr){
         return commentArr.map(commentObj => {
-            return <ContentList id={commentObj.comment_id} content={commentObj.comment} username={commentObj.username} date={commentObj.created_at}/>
+            return <ContentList id={commentObj.comment_id} content={commentObj.comment} username={commentObj.username} date={commentObj.created_at} likeHandler={this.likeHandler} likes={ this.state.commentLikes.filter(obj => obj.id == commentObj.comment_id)[0].count }/>
         })
-
-        /* 
-            "comment_id": 1,
-            "comment": "First!",
-            "username": "bobby",
-            "post_id": 1,
-            "created_at": "2019-02-25T16:46:09.992Z"
-        */
     }
 
     render(){
@@ -129,7 +174,7 @@ class PostPage extends React.Component{
                 {this.state.postExists ? 
                 <PostView post={this.state.post} commentLikes={this.state.commentLikes} postLikes={this.state.postLikes} /> : 
                 <NoPostView />}
-                { this.formatComments(this.state.comments) }
+                { this.state.commentLikes.length > 0 ? this.formatComments(this.state.comments) : false }
             </Layout>
         )
     }
