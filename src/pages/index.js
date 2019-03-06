@@ -2,6 +2,7 @@ import React from "react"
 import ContentList from '../components/contentList'
 import Layout from "../components/layout"
 import { Link } from 'gatsby'; 
+import "../components/loader.css";
 
 class IndexPage extends React.Component{
   constructor(props){
@@ -88,6 +89,11 @@ class IndexPage extends React.Component{
     })
   }
 
+  handleSubmit(e, val){
+    console.log('e: ', e)
+    console.log('value: ', val)
+  }
+
   render(){
     const topStyles = {
       textDecoration: 'none',
@@ -110,7 +116,7 @@ class IndexPage extends React.Component{
     return(
       <Layout title="For'm">
         <div style={{marginBottom: '30px', display: 'flex', justifyContent: 'space-between'}}>
-          <Link style={topStyles}>Start a Discussion</Link>
+          <Link to="post/create" style={topStyles}>Start a Discussion</Link>
           <select style={selectStyles}>
             <option value="title">Title</option>
             <option value="date">Date</option>
@@ -118,7 +124,7 @@ class IndexPage extends React.Component{
             <option value="comments">Comments</option>
           </select>
         </div>
-        {this.preparePosts(this.state.data)}
+        {this.state.data.length > 0 ? this.preparePosts(this.state.data) : <div className="loader">Loading...</div>}
       </Layout>
     )
   }

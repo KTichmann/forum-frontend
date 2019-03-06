@@ -28,7 +28,7 @@ const ContentList = (props) => {
             </div>
             <div className="likes" style={{display: 'flex', flexDirection: 'row'}} onClick={() => props.likeHandler ? props.likeHandler(props.id) : false}>
                 {props.commentCount ? 
-                    [<div style={{fontSize: '14px', fontWeight: '600', marginRight: '10px', fontFamily: 'Ubuntu', marginTop: '-2px'}}>{props.commentCount}</div>, <img alt='comments' classname="likeImg" style={{width: '20px', height: '20px'}} src={commentIcon}/>] :
+                    [<div style={{fontSize: '14px', fontWeight: '600', marginRight: '10px', fontFamily: 'Ubuntu', marginTop: '-2px'}}>{props.commentCount}</div>, <img alt='comments' className="likeImg" style={{width: '20px', height: '20px'}} src={commentIcon}/>] :
                     false
                 }
                     <div style={{fontSize: '14px', fontWeight: '600', marginLeft: '20px', marginRight: '10px', fontFamily: 'Ubuntu', marginTop: '-2px'}}>{props.likes ? props.likes : 0}</div>

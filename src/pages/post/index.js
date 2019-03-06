@@ -1,10 +1,12 @@
 import React from "react";
-import Layout from "../components/layout";
-import PostView from "../components/postView";
-import NoPostView from "../components/noPostView";
-import ContentList from "../components/contentList";
-import "../components/loader.css";
-import "../components/post.css";
+import Layout from "../../components/layout";
+import PostView from "../../components/postView";
+import NoPostView from "../../components/noPostView";
+import ContentList from "../../components/contentList";
+import Input from "../../components/input"
+
+import "../../components/loader.css";
+import "../../components/post.css";
 
 class PostPage extends React.Component{
     constructor(props){
@@ -20,6 +22,7 @@ class PostPage extends React.Component{
         this.likeHandler = this.likeHandler.bind(this);
         this.getCommentData = this.getCommentData.bind(this);
         this.formatComments = this.formatComments.bind(this);
+        this.handleAddComment = this.handleAddComment.bind(this);
     }
 
     componentWillMount(){
@@ -123,7 +126,8 @@ class PostPage extends React.Component{
             if(likes.classList.contains('likeAdded')){
                 likes.classList.remove('likeAdded');
 
-                const url = "https://ktichmann-forum-api.herokuapp.com/likes/remove"
+                const url = "https://ktichmann-forum-api.herokuapp.com/likes/remove";
+
                 fetch(url, {
                     method: 'POST',
                     headers: {
@@ -140,7 +144,7 @@ class PostPage extends React.Component{
                 .catch(error => console.log(error) 
                     //TODO: Handle error
                 )
-            } else{
+            } else {
                 likes.classList.add('likeAdded');
                 const url = "https://ktichmann-forum-api.herokuapp.com/likes/add"
                 fetch(url, {
@@ -153,9 +157,18 @@ class PostPage extends React.Component{
                 })
                 .then(res => res.json()).then(res => {
                     if(res.success){
-                        this.setState(prevState => ({
-                            commentLikes: prevState.commentLikes.map(likeObj => {if(likeObj.id === id){return {...likeObj, count: parseInt(likeObj.count) + 1}} else { return likeObj }})
-                        }))
+                        this.setState(prevState => {
+                            let commentLikes;
+                            console.log(prevState.commentLikes)
+                            if(prevState.commentLikes.filter(obj => obj.id === id).length > 0){
+                                commentLikes = prevState.commentLikes.map(likeObj => {if(likeObj.id === id){return {...likeObj, count: parseInt(likeObj.count) + 1}} else { return likeObj }})
+                            } else {
+                                commentLikes = [...prevState.commentLikes, {id: id, count: 1}]
+                            }
+                            return {
+                                commentLikes: commentLikes
+                            }
+                        })
                     }
                 })
                 .catch(error => console.log(error) 
@@ -167,8 +180,36 @@ class PostPage extends React.Component{
 
     formatComments(commentArr){
         return commentArr.map(commentObj => {
-            return <ContentList id={commentObj.comment_id} content={commentObj.comment} username={commentObj.username} date={commentObj.created_at} likeHandler={this.likeHandler} likes={ this.state.commentLikes.filter(obj => obj.id == commentObj.comment_id)[0].count }/>
+            let commentLikes = this.state.commentLikes.filter(obj => obj.id == commentObj.comment_id);
+            return <ContentList id={commentObj.comment_id} content={commentObj.comment} username={commentObj.username} date={commentObj.created_at} likeHandler={this.likeHandler} likes={ commentLikes.length > 0 ? commentLikes[0].count : 0 }/>
         })
+    }
+
+    handleAddComment(e, val){
+        let addCommentUrl = `https://ktichmann-forum-api.herokuapp.com/comments/create`
+        //check to make sure val isn't empty:
+        if(val){
+            //add the comment to the db on the server via fetch request
+            fetch(addCommentUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Authorization': sessionStorage.getItem('token')
+                },
+                body: `post_id=${this.post_id}&comment=${val}`
+            })
+            .then(res => {
+                return res.json();
+            })
+            .then(res => {
+                if(res.success){
+                    console.log(res)
+                    this.getCommentData();
+                    setTimeout(console.log(this.state), 10000)
+                }
+            })
+        }
+        //update the comment list - with another fetch request to comments
     }
 
     render(){
@@ -177,7 +218,8 @@ class PostPage extends React.Component{
                 { this.state.post ? (this.state.postExists ? 
                 <PostView post={this.state.post} commentLikes={this.state.commentLikes} postLikes={this.state.postLikes} /> : 
                 <NoPostView />) : <div className="loader">Loading...</div> }
-                { (this.state.commentLikes.length > 0) ? this.formatComments(this.state.comments) : false}
+                { this.formatComments(this.state.comments) }
+                { sessionStorage.getItem('token') ? <Input id={`post-${this.post_id}`} buttonValue="Comment" handleSubmit={this.handleAddComment}/> : <Input handleSubmit={() => window.location.replace('/log-in')} buttonValue="Log in" textValue="Log in to comment" textAreaStyle={{pointerEvents: "none", backgroundColor: "rgba(0,0,0,.1)", padding: "1rem 1.5rem", color: "rgba(0,0,0,.6)"}}/>}
             </Layout>
         )
     }

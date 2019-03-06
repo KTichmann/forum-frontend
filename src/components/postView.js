@@ -22,7 +22,6 @@ const PostView = (props) => {
                             <span style={{marginRight: "8px"}}>{props.postLikes}</span><img alt="likes" style={{width: '20px', height: '20px', marginTop: "1px"}} src={likesIcon}/>
                         </div>
                     </div>
-
                     <div style={{  margin: '10px', marginLeft: '12px', fontFamily: 'Ubuntu', fontSize: '16px', width: '800px' }}>
                         {props.post.post}
                     </div>
