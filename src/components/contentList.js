@@ -28,7 +28,7 @@ const ContentList = (props) => {
                         : false
                     }
                     <div className="time"> 
-                        {props.username} 
+                        {`${props.username} `}
                         {moment(props.date).fromNow()}
                     </div>
                     <div className="mainContent">

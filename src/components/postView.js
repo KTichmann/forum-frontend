@@ -3,6 +3,7 @@ import moment from 'moment';
 import Avatars from '@dicebear/avatars';
 import sprites from '@dicebear/avatars-male-sprites';
 import likesIcon from '../images/likes.png';
+import ReactMarkdown from 'react-markdown';
 
 const PostView = (props) => {
     let options = {}
@@ -23,7 +24,7 @@ const PostView = (props) => {
                         </div>
                     </div>
                     <div style={{  margin: '10px', marginLeft: '12px', fontFamily: 'Ubuntu', fontSize: '16px', width: '800px' }}>
-                        {props.post.post}
+                        <ReactMarkdown source={props.post.post} />
                     </div>
                 </div>
             </div>
