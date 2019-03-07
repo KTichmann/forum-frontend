@@ -16,13 +16,15 @@ class PostPage extends React.Component{
             comments: [],
             commentLikes: [],
             postLikes: 0,
-            postExists: true
+            postExists: true,
+            editing: false
         }
 
         this.likeHandler = this.likeHandler.bind(this);
         this.getCommentData = this.getCommentData.bind(this);
         this.formatComments = this.formatComments.bind(this);
         this.handleAddComment = this.handleAddComment.bind(this);
+        this.editPost = this.editPost.bind(this);
     }
 
     componentWillMount(){
@@ -212,11 +214,23 @@ class PostPage extends React.Component{
         //update the comment list - with another fetch request to comments
     }
 
+    editPost(){
+        if(!this.state.editing){
+            this.setState({editing: true})
+            document.querySelector("#post-content").innerHTML = `
+            <textArea style="width: 100%; height: auto; margin-bottom: 1rem;">${this.state.post.post}</textArea>`
+        } else {
+            //Make a fetch request to the server to update the post
+            //Refresh the page
+            console.log("posting your comment!")
+        }
+    }
+
     render(){
         return(
             <Layout>
                 { this.state.post ? (this.state.postExists ? 
-                <PostView post={this.state.post} commentLikes={this.state.commentLikes} postLikes={this.state.postLikes} /> : 
+                <PostView post={this.state.post} commentLikes={this.state.commentLikes} postLikes={this.state.postLikes} userCanEdit={window.sessionStorage.getItem("for-mUsername") === this.state.post.username} handleEdit={this.editPost}/> : 
                 <NoPostView />) : <div className="loader">Loading...</div> }
                 { this.formatComments(this.state.comments) }
                 { sessionStorage.getItem('token') ? <Input id={`post-${this.post_id}`} buttonValue="Comment" handleSubmit={this.handleAddComment}/> : <Input handleSubmit={() => window.location.replace('/log-in')} buttonValue="Log in" textValue="Log in to comment" textAreaStyle={{pointerEvents: "none", backgroundColor: "rgba(0,0,0,.1)", padding: "1rem 1.5rem", color: "rgba(0,0,0,.6)"}}/>}

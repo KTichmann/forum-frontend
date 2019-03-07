@@ -21,10 +21,12 @@
     "gatsby-source-filesystem": "^2.0.23",
     "gatsby-transformer-sharp": "^2.1.14",
     "moment": "^2.24.0",
+    "package.json": "^2.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "react-markdown": "^4.0.6"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.7.2",

@@ -3,6 +3,7 @@ import moment from 'moment';
 import Avatars from '@dicebear/avatars';
 import sprites from '@dicebear/avatars-male-sprites';
 import likesIcon from '../images/likes.png';
+import deleteIcon from '../images/delete.png';
 import ReactMarkdown from 'react-markdown';
 
 const PostView = (props) => {
@@ -13,18 +14,19 @@ const PostView = (props) => {
         <div>
             <h1 style={{ textAlign: 'center', fontSize: '32px', color: 'rgba(17,28,121, .6)' }}>{props.post.title}</h1>
             <div style={{ display: 'flex' }}>
-                <div style={{width: '40px', height: '40px', borderRadius: '50%'}} dangerouslySetInnerHTML={{__html: avatars.create(props.post.username)}}></div>
+                <div style={{ width: '40px', height: '40px', borderRadius: '50%' }} dangerouslySetInnerHTML={{ __html: avatars.create(props.post.username) }}></div>
                 <div style={{ marginLeft: '25px' }}>
                     <div style={{ paddingTop: '10px', fontFamily: 'Ubuntu', fontSize: '16px', fontWeight: '600', display: 'flex', justifyContent: 'space-between' }}>
                         <div>
                             {props.post.username} <span style={{fontSize: '16px', fontWeight: '400', color: 'rgba(0,0,0,.6)', marginLeft: '10px' }}>{moment(props.post.created_at).fromNow()}</span>
                         </div>
-                        <div style={{display: "flex", }}>
-                            <span style={{marginRight: "8px"}}>{props.postLikes}</span><img alt="likes" style={{width: '20px', height: '20px', marginTop: "1px"}} src={likesIcon}/>
+                        <div style={{ display: "flex" }}>
+                            <span style={{ marginRight: "8px" }}>{props.postLikes}</span><img alt="likes" style={{width: '20px', height: '20px', marginTop: "1px"}} src={likesIcon}/>
                         </div>
                     </div>
-                    <div style={{  margin: '10px', marginLeft: '12px', fontFamily: 'Ubuntu', fontSize: '16px', width: '800px' }}>
-                        <ReactMarkdown source={props.post.post} />
+                    <div style={{  margin: '10px', marginLeft: '12px', fontFamily: 'Ubuntu', fontSize: '16px', width: '800px', position: "relative" }}>
+                        <span id="post-content"><ReactMarkdown source={props.post.post} /></span>
+                        <span style={{ right: "0px", bottom: "0px", position: "absolute", color: "rgba(17, 28, 121, 0.6)", cursor: "pointer", fontWeight: "600", display: props.userCanEdit ? "block" : "none" }} onClick={() => props.handleEdit ? props.handleEdit() : false}>Edit</span>
                     </div>
                 </div>
             </div>
