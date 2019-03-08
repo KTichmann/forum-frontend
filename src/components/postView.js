@@ -22,6 +22,7 @@ const PostView = (props) => {
                         </div>
                         <div style={{ display: "flex" }}>
                             <span style={{ marginRight: "8px" }}>{props.postLikes}</span><img alt="likes" style={{width: '20px', height: '20px', marginTop: "1px"}} src={likesIcon}/>
+                            <img alt="delete" style={{width: '20px', height: '20px', marginTop: "1px", display: props.delete ? 'inline-block' : 'none'}} src={deleteIcon}/>
                         </div>
                     </div>
                     <div style={{  margin: '10px', marginLeft: '12px', fontFamily: 'Ubuntu', fontSize: '16px', width: '800px', position: "relative" }}>

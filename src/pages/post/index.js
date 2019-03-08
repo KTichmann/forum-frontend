@@ -225,12 +225,12 @@ class PostPage extends React.Component{
             console.log("posting your comment!")
         }
     }
-
+    
     render(){
         return(
             <Layout>
                 { this.state.post ? (this.state.postExists ? 
-                <PostView post={this.state.post} commentLikes={this.state.commentLikes} postLikes={this.state.postLikes} userCanEdit={window.sessionStorage.getItem("for-mUsername") === this.state.post.username} handleEdit={this.editPost}/> : 
+                <PostView post={this.state.post} commentLikes={this.state.commentLikes} postLikes={this.state.postLikes} userCanEdit={window.sessionStorage.getItem("for-mUsername") === this.state.post.username} handleEdit={this.editPost} delete={this.state.editing}/> : 
                 <NoPostView />) : <div className="loader">Loading...</div> }
                 { this.formatComments(this.state.comments) }
                 { sessionStorage.getItem('token') ? <Input id={`post-${this.post_id}`} buttonValue="Comment" handleSubmit={this.handleAddComment}/> : <Input handleSubmit={() => window.location.replace('/log-in')} buttonValue="Log in" textValue="Log in to comment" textAreaStyle={{pointerEvents: "none", backgroundColor: "rgba(0,0,0,.1)", padding: "1rem 1.5rem", color: "rgba(0,0,0,.6)"}}/>}
