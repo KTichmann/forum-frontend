@@ -129,6 +129,7 @@ class PostPage extends React.Component{
     }
 
     likeHandler(id){
+        console.log(id)
         let likes = document.getElementById(id).querySelector(`.likes`)
         if(sessionStorage.getItem('token')){
             if(likes.classList.contains('likeAdded')){
@@ -187,11 +188,25 @@ class PostPage extends React.Component{
     }
 
     formatComments(commentArr){
+        const editStyle = {
+            bottom: '0%',
+            right: '5%',
+            fontFamily: 'Ubuntu, sans-serif',
+            position: 'absolute',
+            color: 'rgba(17, 28, 121, 0.6)',
+            cursor: 'pointer',
+            fontWeight: '600',
+            fontSize: '.85rem'
+        }
+
         return commentArr.map(commentObj => {
             let commentLikes = this.state.commentLikes.filter(obj => obj.id == commentObj.comment_id);
             return <div id={`comment-${commentObj.comment_id}`} style={{position:"relative"}}>
-                        <ContentList content={commentObj.comment} username={commentObj.username} date={commentObj.created_at} likeHandler={this.likeHandler} likes={ commentLikes.length > 0 ? commentLikes[0].count : 0 }/>
-                        {window.sessionStorage.getItem('for-mUsername') === commentObj.username ? <span className='comment-edit' style={{bottom: '0%', right: '5%', fontFamily: 'Ubuntu, sans-serif', position: 'absolute', color: 'rgba(17, 28, 121, 0.6)', cursor: 'pointer', fontWeight: '600', fontSize: '.85rem'}} onClick={() => { this.editComment(commentObj.comment_id) }}>Edit</span> : false}
+                        <ContentList id={commentObj.comment_id} content={commentObj.comment} username={commentObj.username} date={commentObj.created_at} likeHandler={this.likeHandler} likes={ commentLikes.length > 0 ? commentLikes[0].count : 0 } />
+                        {window.sessionStorage.getItem('for-mUsername') === commentObj.username ? <span className='comment-edit' style={editStyle} onClick={() => { this.editComment(commentObj.comment_id) }}>Edit</span> : false}
+                        {
+                            this.state.editingComment ? <span className='comment-delete' style={{...editStyle, right: '6rem'}} onClick={() => {this.deleteComment(commentObj.comment_id)}}>Delete</span> : false
+                        }
                     </div>
         })
     }
@@ -228,10 +243,25 @@ class PostPage extends React.Component{
 
             document.querySelector(`#comment-${commentId} .comment-edit`).style.display = "inline"
             document.querySelector(`#comment-${commentId} .content`).innerHTML = `<textarea style='width: 100%; height: 100px; resize: none; font-size: .8rem' >${commentData}</textarea>`
-            
+            document.querySelector('.comment-edit').innerHTML = 'Update'
             this.setState({ editingComment: true });
         }
+    }
 
+    deleteComment(id){
+        document.querySelector(`body`).innerHTML += `
+            <div class="deleteConfirmation" style="position: fixed; top: 40%; left: 50%; transform: translateX(-50%); background-color: rgba(100, 100, 255, 1); padding: 2rem; border-radius: 5px; box-shadow: 1px 1px 1px 1px rgba(0,0,0,.5); font-family: Ubuntu">
+                <div style="margin-bottom: 1rem">Are you sure you want to delete?</div>
+                <div style="display: flex; justify-content: space-around;">
+                    <button style="padding: 5px 20px; border-radius: 4px; border: none; box-shadow: 2px 2px 2px 2px rgba(0,0,0,.3); background-color: #4BB543; width: 40%" id="keepButton">Keep</button>
+                    <button style="padding: 5px 20px; border-radius: 4px; border: none; box-shadow: 2px 2px 2px 2px rgba(0,0,0,.3); background-color: #FF2323; width: 40%" id="deleteButton">Delete</button>
+                </div>
+            </div>
+        `
+
+        document.getElementById('keepButton').addEventListener('click', () => {
+            document.querySelector('.deleteConfirmation').remove();
+        })
     }
 
     handleAddComment(e, val){
@@ -293,11 +323,7 @@ class PostPage extends React.Component{
         return(
             <Layout>
                 { this.state.post ? (this.state.postExists ? 
-<<<<<<< HEAD
                 <PostView post={this.state.post} commentLikes={this.state.commentLikes} postLikes={this.state.postLikes} userCanEdit={window.sessionStorage.getItem("for-mUsername") === this.state.post.username} handleEdit={this.editPost} editText={ this.state.editing ? "Submit" : "Edit" }/> : 
-=======
-                <PostView post={this.state.post} commentLikes={this.state.commentLikes} postLikes={this.state.postLikes} userCanEdit={window.sessionStorage.getItem("for-mUsername") === this.state.post.username} handleEdit={this.editPost} delete={this.state.editing}/> : 
->>>>>>> b3b5cd41796a610bfc61c56e89a08846ec58c12e
                 <NoPostView />) : <div className="loader">Loading...</div> }
                 { this.formatComments(this.state.comments) }
                 { sessionStorage.getItem('token') ? <Input id={`post-${this.post_id}`} buttonValue="Comment" handleSubmit={this.handleAddComment} /> : <Input handleSubmit={() => window.location.replace('/log-in')} buttonValue="Log in" textValue="Log in to comment" textAreaStyle={{pointerEvents: "none", backgroundColor: "rgba(0,0,0,.1)", padding: "1rem 1.5rem", color: "rgba(0,0,0,.6)"}}/>}

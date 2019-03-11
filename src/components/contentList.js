@@ -4,6 +4,7 @@ import Avatars from '@dicebear/avatars';
 import sprites from '@dicebear/avatars-male-sprites';
 import commentIcon from '../images/comments.png';
 import likesIcon from '../images/likes.png';
+import deleteIcon from '../images/delete.png';
 
 import './contentList.css';
 
@@ -48,7 +49,7 @@ const ContentList = (props) => {
                 <div style={{fontSize: '14px', fontWeight: '600', marginLeft: '20px', marginRight: '10px', fontFamily: 'Ubuntu', marginTop: '-2px'}}>
                     {props.likes ? props.likes : 0}
                 </div>
-                <img alt="likes" className="likeImg" style={{width: '20px', height: '20px'}} src={likesIcon}/>
+                <img alt="likes" className="likeImg" style={{width: '20px', height: '20px'}} src={likesIcon} />
             </div>
         </div>
 )}
