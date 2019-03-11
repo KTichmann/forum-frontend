@@ -1,12 +1,35 @@
-Must-haves
-[] - Implement post delete functionality
-[] - Implement comment edit functionality
-[] - Implement sorting on home page
-[] - Link logo to home page
-[] - About page
-[] - Make comment textarea empty after comment posted
+Logged out users must be able to:
+- [x] View all posts on the homepage
+- [x] View individual posts, and comments for that post
+- [x] Sign up to become a user
+- [x] Sort posts by date, username, and title
 
-Nice-to-haves
-[] - User profiles - allow editing username & changing password
-[] - User signatures - for comments
-[] - User Chat feature - using socket.io / some type of websockets
+Logged in users must be able to:
+- [x] Sign in using their password and username
+- [x] Make a new post
+- [x] Comment on a post
+- [x] Edit a post they have created
+- [x] Edit a comment they have created
+- [x] Like a post (once only)
+- [x] Unlike a post
+- [x] Like a comment
+- [x] Unlike a comment
+- [] Delete their own posts
+- [] Delete their own comments
+
+Logged in users must be prevented from:
+- [x] Editing other people's posts
+- [x] Editing other people's comments
+
+GENERAL TODO: 
+- [] Implement post delete functionality
+- [x] Implement comment edit functionality
+- [] Implement sorting on home page
+- [] Link logo to home page
+- [] About page
+- [] Make comment textarea empty after comment posted
+
+Nice-to-have functionality: 
+- [] User profiles - allow editing username & changing password
+- [] User signatures - for comments
+- [] User Chat feature - using socket.io / some type of websockets
