@@ -1,4 +1,5 @@
 import React from "react";
+import moment from 'moment';
 import Layout from "../../components/layout";
 import PostView from "../../components/postView";
 import NoPostView from "../../components/noPostView";
@@ -17,7 +18,8 @@ class PostPage extends React.Component{
             commentLikes: [],
             postLikes: 0,
             postExists: true,
-            editing: false
+            editing: false,
+            editingComment: false
         }
 
         this.likeHandler = this.likeHandler.bind(this);
@@ -39,6 +41,7 @@ class PostPage extends React.Component{
         this.getPostData();
         this.getCommentData();
         this.getPostLikes();
+        console.log("mounting")
     }
 
     getPostData(){
@@ -66,8 +69,11 @@ class PostPage extends React.Component{
         .then(res => res.json())
         .then(res => {
             if(res.success){
+                const sortedComments = res.data.sort((first, second) => {
+                    return moment(second.created_at).isBefore(moment(first.created_at)) ? 1 : -1;
+                  })
                 this.setState({
-                    comments: res.data
+                    comments: sortedComments
                 })
 
                 this.getCommentLikes();
@@ -183,8 +189,49 @@ class PostPage extends React.Component{
     formatComments(commentArr){
         return commentArr.map(commentObj => {
             let commentLikes = this.state.commentLikes.filter(obj => obj.id == commentObj.comment_id);
-            return <ContentList id={commentObj.comment_id} content={commentObj.comment} username={commentObj.username} date={commentObj.created_at} likeHandler={this.likeHandler} likes={ commentLikes.length > 0 ? commentLikes[0].count : 0 }/>
+            return <div id={`comment-${commentObj.comment_id}`} style={{position:"relative"}}>
+                        <ContentList content={commentObj.comment} username={commentObj.username} date={commentObj.created_at} likeHandler={this.likeHandler} likes={ commentLikes.length > 0 ? commentLikes[0].count : 0 }/>
+                        {window.sessionStorage.getItem('for-mUsername') === commentObj.username ? <span className='comment-edit' style={{bottom: '0%', right: '5%', fontFamily: 'Ubuntu, sans-serif', position: 'absolute', color: 'rgba(17, 28, 121, 0.6)', cursor: 'pointer', fontWeight: '600', fontSize: '.85rem'}} onClick={() => { this.editComment(commentObj.comment_id) }}>Edit</span> : false}
+                    </div>
         })
+    }
+
+    editComment(commentId){
+        //hide all other edit buttons
+        if(this.state.editingComment){
+            //edit the comment using a fetch request
+            let url = `https://ktichmann-forum-api.herokuapp.com/comments/edit`
+            let comment = document.querySelector(`#comment-${commentId} textarea`).value
+            
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Authorization': sessionStorage.getItem('token')
+                },
+                body: `id=${commentId}&comment=${comment}`
+            })
+            .then(res => res.json())
+            .then(res => {
+                if(res.success){
+                    // this.getCommentData();
+                    window.location.reload();
+                }
+            })
+            .catch(err => console.log(err))
+            //refresh comments
+        } else {
+            document.querySelectorAll('.comment-edit').forEach(val => {
+                val.style.display = "none";
+            })
+            let commentData = this.state.comments.filter(commentObj => commentObj.comment_id === commentId)[0].comment;
+
+            document.querySelector(`#comment-${commentId} .comment-edit`).style.display = "inline"
+            document.querySelector(`#comment-${commentId} .content`).innerHTML = `<textarea style='width: 100%; height: 100px; resize: none; font-size: .8rem' >${commentData}</textarea>`
+            
+            this.setState({ editingComment: true });
+        }
+
     }
 
     handleAddComment(e, val){
@@ -205,9 +252,7 @@ class PostPage extends React.Component{
             })
             .then(res => {
                 if(res.success){
-                    console.log(res)
                     this.getCommentData();
-                    setTimeout(console.log(this.state), 10000)
                 }
             })
         }
@@ -233,7 +278,7 @@ class PostPage extends React.Component{
                 <PostView post={this.state.post} commentLikes={this.state.commentLikes} postLikes={this.state.postLikes} userCanEdit={window.sessionStorage.getItem("for-mUsername") === this.state.post.username} handleEdit={this.editPost} delete={this.state.editing}/> : 
                 <NoPostView />) : <div className="loader">Loading...</div> }
                 { this.formatComments(this.state.comments) }
-                { sessionStorage.getItem('token') ? <Input id={`post-${this.post_id}`} buttonValue="Comment" handleSubmit={this.handleAddComment}/> : <Input handleSubmit={() => window.location.replace('/log-in')} buttonValue="Log in" textValue="Log in to comment" textAreaStyle={{pointerEvents: "none", backgroundColor: "rgba(0,0,0,.1)", padding: "1rem 1.5rem", color: "rgba(0,0,0,.6)"}}/>}
+                { sessionStorage.getItem('token') ? <Input id={`post-${this.post_id}`} buttonValue="Comment" handleSubmit={this.handleAddComment} /> : <Input handleSubmit={() => window.location.replace('/log-in')} buttonValue="Log in" textValue="Log in to comment" textAreaStyle={{pointerEvents: "none", backgroundColor: "rgba(0,0,0,.1)", padding: "1rem 1.5rem", color: "rgba(0,0,0,.6)"}}/>}
             </Layout>
         )
     }

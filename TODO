@@ -1,0 +1,12 @@
+Must-haves
+[] - Implement post delete functionality
+[] - Implement comment edit functionality
+[] - Implement sorting on home page
+[] - Link logo to home page
+[] - About page
+[] - Make comment textarea empty after comment posted
+
+Nice-to-haves
+[] - User profiles - allow editing username & changing password
+[] - User signatures - for comments
+[] - User Chat feature - using socket.io / some type of websockets

@@ -39,7 +39,7 @@ const Input = (props) => {
     return (
         <div id={props.id} style={props.mainStyle ? {...style.mainStyle, ...props.mainStyle} : style.mainStyle}>
             <textarea value={value} onChange={handleValueChange} style={props.textAreaStyle ? {...style.defaultTextAreaStyle, ...props.textAreaStyle} : style.defaultTextAreaStyle}></textarea>
-            <button onClick={(e) => { props.handleSubmit(e, value) }} style={props.buttonStyle ? {...style.defaultButtonStyle, ...props.buttonStyle} : style.defaultButtonStyle}>{props.buttonValue ? props.buttonValue : "Submit"}</button>
+            <button onClick={(e) => { props.handleSubmit(e, value); setValue("") }} style={props.buttonStyle ? {...style.defaultButtonStyle, ...props.buttonStyle} : style.defaultButtonStyle}>{props.buttonValue ? props.buttonValue : "Submit"}</button>
         </div>
     )
 }
