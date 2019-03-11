@@ -218,11 +218,29 @@ class PostPage extends React.Component{
         if(!this.state.editing){
             this.setState({editing: true})
             document.querySelector("#post-content").innerHTML = `
-            <textArea style="width: 100%; height: auto; margin-bottom: 1rem;">${this.state.post.post}</textArea>`
+            <textArea style="width: 100%; height: 50vh; margin-bottom: 2rem; padding: 5px; border: none; box-shadow: rgba(0, 0, 0, 0.3) 1px 1px 4px 0px; font-family: Ubuntu, sans-serif; resize: none;">${this.state.post.post}</textArea>`
         } else {
             //Make a fetch request to the server to update the post
-            //Refresh the page
-            console.log("posting your comment!")
+            let post = document.querySelector("#post-content textarea").value;
+            let url = `https://ktichmann-forum-api.herokuapp.com/posts/edit`
+
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Authorization': sessionStorage.getItem('token')
+                },
+                body: `title=${this.state.post.title}&post=${post}&id=${this.post_id}`
+            })
+            .then(res => res.json())
+            .then(res => {
+                console.log(`id=${this.post_id}&title=${this.state.post.title}&post=${post}`)
+                if(res.success){
+                    //Refresh the page
+                    window.location.reload();
+                }
+            })
+            .catch(error => console.log(error))
         }
     }
 
@@ -230,7 +248,7 @@ class PostPage extends React.Component{
         return(
             <Layout>
                 { this.state.post ? (this.state.postExists ? 
-                <PostView post={this.state.post} commentLikes={this.state.commentLikes} postLikes={this.state.postLikes} userCanEdit={window.sessionStorage.getItem("for-mUsername") === this.state.post.username} handleEdit={this.editPost}/> : 
+                <PostView post={this.state.post} commentLikes={this.state.commentLikes} postLikes={this.state.postLikes} userCanEdit={window.sessionStorage.getItem("for-mUsername") === this.state.post.username} handleEdit={this.editPost} editText={ this.state.editing ? "Submit" : "Edit" }/> : 
                 <NoPostView />) : <div className="loader">Loading...</div> }
                 { this.formatComments(this.state.comments) }
                 { sessionStorage.getItem('token') ? <Input id={`post-${this.post_id}`} buttonValue="Comment" handleSubmit={this.handleAddComment}/> : <Input handleSubmit={() => window.location.replace('/log-in')} buttonValue="Log in" textValue="Log in to comment" textAreaStyle={{pointerEvents: "none", backgroundColor: "rgba(0,0,0,.1)", padding: "1rem 1.5rem", color: "rgba(0,0,0,.6)"}}/>}
