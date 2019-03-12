@@ -1,7 +1,8 @@
 import React from "react"
 import ContentList from '../components/contentList'
 import Layout from "../components/layout"
-import { Link } from 'gatsby'; 
+import Chat from "../components/chat"
+import { Link } from 'gatsby';
 import "../components/loader.css";
 
 class IndexPage extends React.Component{
@@ -125,6 +126,7 @@ class IndexPage extends React.Component{
           </select>
         </div>
         {this.state.data.length > 0 ? this.preparePosts(this.state.data) : <div className="loader">Loading...</div>}
+        <Chat />
       </Layout>
     )
   }
