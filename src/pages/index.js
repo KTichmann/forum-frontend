@@ -126,7 +126,7 @@ class IndexPage extends React.Component{
           </select>
         </div>
         {this.state.data.length > 0 ? this.preparePosts(this.state.data) : <div className="loader">Loading...</div>}
-        <Chat />
+        <Chat auth={this.state.auth}/>
       </Layout>
     )
   }
