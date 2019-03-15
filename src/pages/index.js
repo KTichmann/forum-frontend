@@ -11,8 +11,13 @@ class IndexPage extends React.Component{
       auth: '',
       comments: [],
       data: [],
-      likes: []
+      likes: [],
+      postView: <div className="loader">Loading...</div>
     }
+
+    this.sortBy = this.sortBy.bind(this);
+    this.preparePosts = this.preparePosts.bind(this);
+    this.setPosts = this.setPosts.bind(this);
   }
 
 
@@ -34,10 +39,13 @@ class IndexPage extends React.Component{
     return 0;
   }
 
-  preparePosts(postArr){
-    const sortedPostArr = postArr.sort((first, second) => {
-      return second.post_id - first.post_id;
-    })
+  preparePosts(postArr, sort=true){
+    let sortedPostArr = postArr;
+    if(sort){
+        sortedPostArr = postArr.sort((first, second) => {
+        return second.post_id - first.post_id;
+      })
+    }
     const preparedPostArr = sortedPostArr.map(postObj => (
       <Link to={`/post`} state={{post_id: postObj.post_id}} style={{textDecoration: 'none'}}>
         <ContentList 
@@ -53,7 +61,9 @@ class IndexPage extends React.Component{
         </Link>
       ))
 
-    return preparedPostArr;
+    this.setState({
+      postView: preparedPostArr
+    });
   }
 
   setPosts(){
@@ -65,6 +75,7 @@ class IndexPage extends React.Component{
         this.setState({
           data: res.data
         })
+        this.preparePosts(this.state.data)
       })
   }
   
@@ -94,6 +105,33 @@ class IndexPage extends React.Component{
     console.log('value: ', val)
   }
 
+  sortBy(event){
+    let choice = event.target.value;
+    switch(choice){
+        case 'title':
+          let res = this.state.data.sort((firstObj, secondObj) => {
+            const firstTitle = firstObj.title.toUpperCase()
+            const secondTitle = secondObj.title.toUpperCase()
+            if (firstTitle < secondTitle) {
+              return -1;
+            }
+            if (firstTitle > secondTitle) {
+              return 1;
+            }
+          })
+          this.preparePosts(res, false);
+        break
+        case 'date':
+        break
+        case 'likes':
+        break
+        case 'comments':
+        break
+        default:
+        break
+    }
+  }
+
   render(){
     const topStyles = {
       textDecoration: 'none',
@@ -117,14 +155,14 @@ class IndexPage extends React.Component{
       <Layout title="For'm">
         <div style={{marginBottom: '30px', display: 'flex', justifyContent: 'space-between'}}>
           <Link to="post/create" style={topStyles}>Start a Discussion</Link>
-          <select style={selectStyles}>
+          <select style={selectStyles} onChange={this.sortBy}>
             <option value="title">Title</option>
             <option value="date">Date</option>
             <option value="likes">Likes</option>
             <option value="comments">Comments</option>
           </select>
         </div>
-        {this.state.data.length > 0 ? this.preparePosts(this.state.data) : <div className="loader">Loading...</div>}
+        {this.state.postView}
       </Layout>
     )
   }

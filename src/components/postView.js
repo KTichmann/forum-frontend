@@ -9,7 +9,6 @@ import ReactMarkdown from 'react-markdown';
 const PostView = (props) => {
     let options = {}
     let avatars = new Avatars(sprites(options));
-
     return (
         <div>
             <h1 style={{ textAlign: 'center', fontSize: '32px', color: 'rgba(17,28,121, .6)' }}>{props.post.title}</h1>
@@ -21,7 +20,7 @@ const PostView = (props) => {
                             {props.post.username} <span style={{fontSize: '16px', fontWeight: '400', color: 'rgba(0,0,0,.6)', marginLeft: '10px' }}>{moment(props.post.created_at).fromNow()}</span>
                         </div>
                         <div style={{ display: "flex" }}>
-                            <span style={{ marginRight: "8px" }}>{props.postLikes}</span><img alt="likes" style={{width: '20px', height: '20px', marginTop: "1px"}} src={likesIcon}/>
+                            <span style={{ marginRight: "8px", cursor: "pointer" }}>{props.postLikes}</span><img alt="likes" onClick={props.handleLike} style={{width: '20px', height: '20px', marginTop: "1px", cursor: "pointer"}} src={likesIcon}/>
                             <img alt="delete" style={{width: '20px', height: '20px', marginTop: "1px", display: props.delete ? 'inline-block' : 'none'}} src={deleteIcon}/>
                         </div>
                     </div>

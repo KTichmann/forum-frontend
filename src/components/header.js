@@ -21,7 +21,7 @@ const Header = ({ siteTitle }) => {
     <div className="container">
       <div className="left">
         <div className="logo">
-          FOR'M
+          <Link to="/">FOR'M</Link>
         </div>
         <div className="menu">
           <Link to="/">Home</Link>
