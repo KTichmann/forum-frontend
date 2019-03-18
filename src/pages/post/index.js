@@ -205,7 +205,7 @@ class PostPage extends React.Component{
                         <ContentList id={commentObj.comment_id} content={commentObj.comment} username={commentObj.username} date={commentObj.created_at} likeHandler={this.likeHandler} likes={ commentLikes.length > 0 ? commentLikes[0].count : 0 } />
                         {window.sessionStorage.getItem('for-mUsername') === commentObj.username ? <span className='comment-edit' style={editStyle} onClick={() => { this.editComment(commentObj.comment_id) }}>Edit</span> : false}
                         {
-                            this.state.editingComment === commentObj.comment_id ? <div id="delete-section"><span className='comment-delete' style={{...editStyle, right: '6rem'}} onClick={() => {this.handleDelete(commentObj.comment_id)}}>Delete</span></div> : false
+                            this.state.editingComment === commentObj.comment_id ? <div id="delete-section" className="comments"><span className='comment-delete' style={{...editStyle, right: '6rem'}} onClick={() => {this.handleDelete(commentObj.comment_id)}}>Delete</span></div> : false
                         }
                     </div>
         })
@@ -249,7 +249,7 @@ class PostPage extends React.Component{
     }
 
     handleDelete(id, type="comments"){
-        document.querySelector(`#delete-section`).innerHTML += `
+        document.querySelector(`#delete-section.${type}`).innerHTML += `
             <div class="deleteConfirmation" style="z-index: 1000; position: fixed; top: 40%; left: 50%; transform: translateX(-50%); background-color: rgba(100, 100, 255, 1); padding: 2rem; border-radius: 5px; box-shadow: 1px 1px 1px 1px rgba(0,0,0,.5); font-family: Ubuntu">
                 <div style="margin-bottom: 1rem">Are you sure you want to delete?</div>
                 <div style="display: flex; justify-content: space-around;">

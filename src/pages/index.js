@@ -26,7 +26,6 @@ class IndexPage extends React.Component{
     this.setPosts();
     this.getComments();
     this.getLikes();
-
     this.setState({
       auth: window.sessionStorage.getItem('token')
     })
@@ -88,6 +87,7 @@ class IndexPage extends React.Component{
       .then(res => {
         let response = res.data.map(commentObj => commentObj.post_id)
         this.setState({comments: response})
+        this.preparePosts(this.state.data)
       })
   }
 
@@ -98,6 +98,7 @@ class IndexPage extends React.Component{
     .then(res => res.json())
     .then(res => {
       this.setState({likes: res.data})
+      this.preparePosts(this.state.data)
     })
   }
 
@@ -136,7 +137,7 @@ class IndexPage extends React.Component{
             let firstLikes = this.state.likes.filter(obj => obj.id === firstObj.post_id)[0];
             let secondLikes = this.state.likes.filter(obj => obj.id === secondObj.post_id)[0];
             if(firstLikes && secondLikes){
-              return sortHelper(firstLikes.count, secondLikes.count)
+              return sortHelper(secondLikes.count, firstLikes.count)
             } else if(firstLikes){
               return -1
             } else{
