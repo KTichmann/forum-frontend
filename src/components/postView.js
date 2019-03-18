@@ -27,6 +27,7 @@ const PostView = (props) => {
                     <div style={{  margin: '10px', marginLeft: '12px', fontFamily: 'Ubuntu', fontSize: '16px', width: '800px', position: "relative" }}>
                         <span id="post-content"><ReactMarkdown source={props.post.post} /></span>
                         <span style={{ right: "0px", bottom: "0px", position: "absolute", color: "rgba(17, 28, 121, 0.6)", cursor: "pointer", fontWeight: "600", display: props.userCanEdit ? "block" : "none" }} onClick={() => props.handleEdit ? props.handleEdit() : false}>{props.editText}</span>
+                        <span id="delete-section" style={{ right: "60px", bottom: "0px", position: "absolute", color: "rgba(17, 28, 121, 0.6)", cursor: "pointer", fontWeight: "600", display: props.userCanEdit ? "block" : "none" }} onClick={() => props.handleDelete ? props.handleDelete() : false}>{props.deleteText}</span>
                     </div>
                 </div>
             </div>

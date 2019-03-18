@@ -2,7 +2,10 @@ Logged out users must be able to:
 - [x] View all posts on the homepage
 - [x] View individual posts, and comments for that post
 - [x] Sign up to become a user
-- [] Sort posts by date, username, and title
+- [x] Sort posts by date
+- [x] Sort posts by number of comments
+- [x] Sort posts by title
+- [x] Sort posts by number of likes
 
 Logged in users must be able to:
 - [x] Sign in using their password and username
@@ -11,7 +14,7 @@ Logged in users must be able to:
 - [x] Edit a post they have created
 - [x] Edit a comment they have created
 - [x] Like a post (once only)
-- [x] Unlike a post
+- [] Unlike a post
 - [x] Like a comment
 - [x] Unlike a comment
 - [] Delete their own posts
@@ -27,7 +30,7 @@ GENERAL TODO:
 - [] Implement sorting on home page
 - [x] Link logo to home page
 - [] About page
-- [] Make comment textarea empty after comment posted
+- [x] Make comment textarea empty after comment posted
 
 Nice-to-have functionality: 
 - [] User profiles - allow editing username & changing password

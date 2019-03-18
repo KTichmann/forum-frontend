@@ -107,29 +107,55 @@ class IndexPage extends React.Component{
 
   sortBy(event){
     let choice = event.target.value;
+    const sortHelper = (first, second) => {
+      if(first < second) {
+        return -1
+      } else {
+        return 1
+      }
+    }
+    let res;
     switch(choice){
         case 'title':
-          let res = this.state.data.sort((firstObj, secondObj) => {
+          res = this.state.data.sort((firstObj, secondObj) => {
             const firstTitle = firstObj.title.toUpperCase()
             const secondTitle = secondObj.title.toUpperCase()
-            if (firstTitle < secondTitle) {
-              return -1;
-            }
-            if (firstTitle > secondTitle) {
-              return 1;
-            }
+            return sortHelper(firstTitle, secondTitle)
           })
-          this.preparePosts(res, false);
         break
         case 'date':
+          res = this.state.data.sort((firstObj, secondObj) => {
+            const firstDate = firstObj.created_at
+            const secondDate = secondObj.created_at
+            return sortHelper(secondDate, firstDate)
+          })
         break
         case 'likes':
+          res = this.state.data.sort((firstObj, secondObj) => {
+            let firstLikes = this.state.likes.filter(obj => obj.id === firstObj.post_id)[0];
+            let secondLikes = this.state.likes.filter(obj => obj.id === secondObj.post_id)[0];
+            if(firstLikes && secondLikes){
+              return sortHelper(firstLikes.count, secondLikes.count)
+            } else if(firstLikes){
+              return -1
+            } else{
+              return 1
+            }
+          })
         break
         case 'comments':
+          res = this.state.data.sort((firstObj, secondObj) => {
+            let firstCommentCount = this.state.comments.filter(num => num == firstObj.post_id).length;
+            let secondCommentCount = this.state.comments.filter(num => num == secondObj.post_id).length;
+              return sortHelper(secondCommentCount, firstCommentCount)
+          })
         break
         default:
+          res = this.state.data
         break
     }
+
+    this.preparePosts(res, false);
   }
 
   render(){

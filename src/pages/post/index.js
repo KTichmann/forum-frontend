@@ -130,7 +130,6 @@ class PostPage extends React.Component{
     }
 
     likeHandler(id){
-        console.log(id)
         let likes = document.getElementById(id).querySelector(`.likes`)
         if(sessionStorage.getItem('token')){
             if(likes.classList.contains('likeAdded')){
@@ -206,7 +205,7 @@ class PostPage extends React.Component{
                         <ContentList id={commentObj.comment_id} content={commentObj.comment} username={commentObj.username} date={commentObj.created_at} likeHandler={this.likeHandler} likes={ commentLikes.length > 0 ? commentLikes[0].count : 0 } />
                         {window.sessionStorage.getItem('for-mUsername') === commentObj.username ? <span className='comment-edit' style={editStyle} onClick={() => { this.editComment(commentObj.comment_id) }}>Edit</span> : false}
                         {
-                            this.state.editingComment === commentObj.comment_id ? <div id="delete-section"><span className='comment-delete' style={{...editStyle, right: '6rem'}} onClick={() => {this.deleteComment(commentObj.comment_id)}}>Delete</span></div> : false
+                            this.state.editingComment === commentObj.comment_id ? <div id="delete-section"><span className='comment-delete' style={{...editStyle, right: '6rem'}} onClick={() => {this.handleDelete(commentObj.comment_id)}}>Delete</span></div> : false
                         }
                     </div>
         })
@@ -249,7 +248,7 @@ class PostPage extends React.Component{
         }
     }
 
-    deleteComment(id){
+    handleDelete(id, type="comments"){
         document.querySelector(`#delete-section`).innerHTML += `
             <div class="deleteConfirmation" style="z-index: 1000; position: fixed; top: 40%; left: 50%; transform: translateX(-50%); background-color: rgba(100, 100, 255, 1); padding: 2rem; border-radius: 5px; box-shadow: 1px 1px 1px 1px rgba(0,0,0,.5); font-family: Ubuntu">
                 <div style="margin-bottom: 1rem">Are you sure you want to delete?</div>
@@ -264,8 +263,7 @@ class PostPage extends React.Component{
         })
 
         document.getElementById('deleteButton').addEventListener('click', () => {
-            let deleteUrl = `https://ktichmann-forum-api.herokuapp.com/comments/delete`
-            console.log(id)
+            let deleteUrl = `https://ktichmann-forum-api.herokuapp.com/${type}/delete`
             fetch(deleteUrl, {
                 method: 'DELETE',
                 headers: {
@@ -276,9 +274,12 @@ class PostPage extends React.Component{
             })
             .then(res => res.json())
             .then(res => {
-                console.log(res)
                 if (res.success){
-                    window.location.reload();
+                    if(type === "posts"){
+                        window.location.replace('/')
+                    } else {
+                        window.location.reload();
+                    }
                 } else{
                     document.querySelector('.deleteConfirmation').remove();
                 }
@@ -344,8 +345,8 @@ class PostPage extends React.Component{
             .catch(error => console.log(error))
         }
     }
+
     handlePostLike(){
-        console.log(this.state.post)
         if(window.sessionStorage.getItem('token')){
             const url = "https://ktichmann-forum-api.herokuapp.com/likes/add"
             fetch(url, {
@@ -369,9 +370,8 @@ class PostPage extends React.Component{
     render(){
         return(
             <Layout>
-                { this.state.post ? (this.state.postExists ? 
-                <PostView id="mainPost" post={this.state.post} handleLike={this.handlePostLike} commentLikes={this.state.commentLikes} postLikes={this.state.postLikes} userCanEdit={window.sessionStorage.getItem("for-mUsername") === this.state.post.username} handleEdit={this.editPost} editText={ this.state.editing ? "Submit" : "Edit" }/> : 
-                <NoPostView />) : <div className="loader">Loading...</div> }
+                { this.state.post ?
+                <PostView id="mainPost" post={this.state.post} handleLike={this.handlePostLike} commentLikes={this.state.commentLikes} postLikes={this.state.postLikes} userCanEdit={window.sessionStorage.getItem("for-mUsername") === this.state.post.username} handleEdit={this.editPost} editText={ this.state.editing ? "Submit" : "Edit" } deleteText={this.state.editing ? "Delete": ""} handleDelete={() => this.handleDelete(this.state.post.post_id, "posts")} /> : <div className="loader">Loading...</div> }
                 { this.formatComments(this.state.comments) }
                 { sessionStorage.getItem('token') ? <Input id={`post-${this.post_id}`} buttonValue="Comment" handleSubmit={this.handleAddComment} /> : <Input handleSubmit={() => window.location.replace('/log-in')} buttonValue="Log in" textValue="Log in to comment" textAreaStyle={{pointerEvents: "none", backgroundColor: "rgba(0,0,0,.1)", padding: "1rem 1.5rem", color: "rgba(0,0,0,.6)"}}/>}
             </Layout>
