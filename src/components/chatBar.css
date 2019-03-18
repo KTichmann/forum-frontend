@@ -1,0 +1,12 @@
+#chatIcon{
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 75% 70%, 75% 100%, 50% 68%, 0 68%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 75% 70%, 75% 100%, 50% 68%, 0 68%);
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    right: 30px;
+    bottom: 20px;
+    cursor: pointer;
+    background: linear-gradient(to bottom right, #30CFD0 0%, #113af1 100%);
+    transition: all .1s;
+}

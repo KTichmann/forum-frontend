@@ -1,7 +1,8 @@
 import React from "react"
 import ContentList from '../components/contentList'
 import Layout from "../components/layout"
-import { Link } from 'gatsby'; 
+import Chat from "../components/chat"
+import { Link } from 'gatsby';
 import "../components/loader.css";
 
 class IndexPage extends React.Component{

@@ -2,7 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
+import Header from "./header";
+import ChatBar from "./chatBar.js"
 import "./layout.css"
 
 const Layout = ({ children }) => (
@@ -28,7 +29,7 @@ const Layout = ({ children }) => (
         >
           <main style={{paddingTop: '100px'}}>{children}</main>
           <footer>
-            
+            <ChatBar />
           </footer>
         </div>
       </>
