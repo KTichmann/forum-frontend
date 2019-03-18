@@ -16,8 +16,8 @@ const Chat = (props) => {
         fontWeight: "600",
         right: "0px",
         zIndex: "1000",
-        color: "black",
-        fontSize: "1rem",
+        color: "rgba(0,0,0,.7)",
+        fontSize: "1.2rem",
         fontFamily: "Ubuntu",
         top: "-25px",
         right: "10px",
@@ -27,12 +27,10 @@ const Chat = (props) => {
 
     const url = `http://ktich-chat-app.herokuapp.com/?auth=${props.auth}`
     return (
-        props.display ?
-        <div style={{height: "400px", width: "300px", position: "fixed", bottom: "10px", right: "30px"}}>
+        <div style={{display: props.display ? "inline-block" : "none", height: "400px", width: "300px", position: "fixed", bottom: "10px", right: "30px"}}>
             <div onClick={props.closeChat} style={closeStyle}>x</div>
             <iframe style={iframeStyles} id="chatBox" src={url}></iframe>
         </div>
-        : false
     )
 }
 
