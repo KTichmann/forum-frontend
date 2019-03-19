@@ -6,48 +6,26 @@ import likesIcon from "../images/likes.png"
 import deleteIcon from "../images/delete.png"
 import ReactMarkdown from "react-markdown"
 
+import "./styles/postView.css"
+
 const PostView = props => {
   let options = {}
   let avatars = new Avatars(sprites(options))
   return (
     <div>
-      <h1
-        style={{
-          textAlign: "center",
-          fontSize: "32px",
-          color: "rgba(17,28,121, .6)",
-        }}
-      >
-        {props.post.title}
-      </h1>
-      <div style={{ display: "flex" }}>
+      <h1>{props.post.title}</h1>
+      <div className="post-container">
         <div
-          style={{ width: "40px", height: "40px", borderRadius: "50%" }}
+          className="avatar"
           dangerouslySetInnerHTML={{
             __html: avatars.create(props.post.username),
           }}
         />
-        <div style={{ marginLeft: "25px" }}>
-          <div
-            style={{
-              paddingTop: "10px",
-              fontFamily: "Ubuntu",
-              fontSize: "16px",
-              fontWeight: "600",
-              display: "flex",
-              justifyContent: "space-between",
-            }}
-          >
+        <div className="post-inner-container">
+          <div className="post-info">
             <div>
               {props.post.username}{" "}
-              <span
-                style={{
-                  fontSize: "16px",
-                  fontWeight: "400",
-                  color: "rgba(0,0,0,.6)",
-                  marginLeft: "10px",
-                }}
-              >
+              <span className="post-date">
                 {moment(props.post.created_at).fromNow()}
               </span>
             </div>
@@ -58,36 +36,20 @@ const PostView = props => {
               <img
                 alt="likes"
                 onClick={props.handleLike}
-                style={{
-                  width: "20px",
-                  height: "20px",
-                  marginTop: "1px",
-                  cursor: "pointer",
-                }}
+                className="like-icon"
                 src={likesIcon}
               />
               <img
                 alt="delete"
+                className="delete-icon"
                 style={{
-                  width: "20px",
-                  height: "20px",
-                  marginTop: "1px",
                   display: props.delete ? "inline-block" : "none",
                 }}
                 src={deleteIcon}
               />
             </div>
           </div>
-          <div
-            style={{
-              margin: "10px",
-              marginLeft: "12px",
-              fontFamily: "Ubuntu",
-              fontSize: "16px",
-              width: "800px",
-              position: "relative",
-            }}
-          >
+          <div className="post-main-content">
             <span id="post-content">
               <ReactMarkdown source={props.post.post} />
             </span>

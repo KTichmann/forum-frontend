@@ -1,0 +1,52 @@
+h1 {
+  text-align: center;
+  font-size: 32px;
+  color: rgba(17, 28, 121, 0.6);
+}
+
+.post-container {
+  display: flex;
+}
+
+/* .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+} */
+
+.post-inner-container {
+  margin-left: 25px;
+}
+
+.post-info {
+  padding-top: 10px;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-date {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.6);
+  margin-left: 10px;
+}
+
+.like-icon,
+.delete-icon {
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  cursor: pointer;
+}
+
+.post-main-container {
+  margin: 10px;
+  margin-left: 12px;
+  font-family: "Ubuntu";
+  font-size: 16px;
+  width: 800px;
+  position: relative;
+}

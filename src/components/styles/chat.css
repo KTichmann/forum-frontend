@@ -1,0 +1,32 @@
+iframe {
+  height: 400px;
+  width: 300px;
+  position: fixed;
+  bottom: 10px;
+  right: 30px;
+  background-color: white;
+  border: 1px solid rgba(100, 0, 0, 0.1);
+  border-radius: 5px;
+  box-shadow: 4px 3px 5px 1px rgba(0, 0, 0, 0.1);
+}
+
+.close-button {
+  font-weight: 600;
+  right: 0px;
+  z-index: 1000;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 1.2rem;
+  font-family: "Ubunutu", sans-serif;
+  top: -25px;
+  right: 10px;
+  position: absolute;
+  cursor: pointer;
+}
+
+.chat-container {
+  height: 400px;
+  width: 300px;
+  position: fixed;
+  bottom: 10px;
+  right: 30px;
+}

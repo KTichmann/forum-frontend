@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import Chat from "./chat"
-import "./chatBar.css"
+import "./styles/chatBar.css"
 
 const ChatBar = () => {
   const auth = window.sessionStorage.getItem("token")

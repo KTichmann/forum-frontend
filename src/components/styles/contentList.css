@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+@import url("https://use.fontawesome.com/releases/v5.7.2/css/all.css");
+
+.content {
+  display: flex;
+  justify-content: space-around;
+  font-family: "Nunito", sans-serif;
+  margin-bottom: 30px;
+  padding: 30px;
+  border-radius: 2px;
+}
+
+.content .title {
+  font-weight: 300;
+}
+
+.content .time {
+  font-size: 14px;
+  margin-top: -4px;
+  color: #aaa;
+  font-weight: 600;
+}
+
+.content .mainContent {
+  color: #aaa;
+  font-size: 14px;
+  width: 700px;
+}
+
+.hover:hover {
+  background-color: rgba(99, 147, 235, 0.1);
+  transition: all 0.3s;
+  box-shadow: 0.1px 0.1px 5px 0.1px rgba(0, 0, 0, 0.15);
+}
+
+.main-content-container {
+  padding-left: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.likes {
+  display: flex;
+  flex-direction: row;
+}
+
+.comment-count {
+  font-size: 14px;
+  font-weight: 600;
+  margin-right: 10px;
+  font-family: "Ubuntu", sans-serif;
+  margin-top: -2px;
+}
+
+.likeImg {
+  width: 20px;
+  height: 20px;
+}
+
+.like-count {
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 20px;
+  margin-right: 10px;
+  font-family: "Ubuntu", sans-serif;
+  margin-top: -2px;
+}

@@ -2,12 +2,11 @@ import React from "react"
 import moment from "moment"
 import Layout from "../../components/layout"
 import PostView from "../../components/postView"
-import NoPostView from "../../components/noPostView"
 import ContentList from "../../components/contentList"
 import Input from "../../components/input"
 
-import "../../components/loader.css"
-import "../../components/post.css"
+import "../../components/styles/loader.css"
+import "../../components/styles/post.css"
 
 class PostPage extends React.Component {
   constructor(props) {

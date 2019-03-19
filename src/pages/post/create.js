@@ -41,8 +41,6 @@ const Create = () => {
           marginBottom: "3rem",
           padding: ".5rem",
           fontFamily: "Ubuntu, sans-serif",
-          width: "100%",
-          marginBottom: "3rem",
           border: ".1px solid rgba(0,0,0, .1)",
         }}
       />
