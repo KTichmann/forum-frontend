@@ -45,8 +45,21 @@ h1 {
 .post-main-container {
   margin: 10px;
   margin-left: 12px;
-  font-family: "Ubuntu";
+  font-family: "Ubuntu", sans-serif;
   font-size: 16px;
   width: 800px;
   position: relative;
+}
+
+.post-options {
+  right: 0px;
+  bottom: 0px;
+  position: absolute;
+  color: rgba(17, 28, 121, 0.6);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#delete-section {
+  right: 60px;
 }

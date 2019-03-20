@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.7.2",
+    "gh-pages": "^2.0.1",
     "prettier": "^1.16.4"
   },
   "keywords": [
@@ -43,6 +44,7 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
+    "deploy:github": "npm run build && node ./scripts/deploy-github",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "repository": {

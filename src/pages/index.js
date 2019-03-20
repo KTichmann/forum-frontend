@@ -3,6 +3,7 @@ import ContentList from "../components/contentList"
 import Layout from "../components/layout"
 import { Link } from "gatsby"
 import "../components/styles/loader.css"
+import "../components/styles/index-page.css"
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class IndexPage extends React.Component {
     this.setPosts = this.setPosts.bind(this)
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.setPosts()
     this.getComments()
     this.getLikes()
@@ -173,24 +174,6 @@ class IndexPage extends React.Component {
   }
 
   render() {
-    const topStyles = {
-      textDecoration: "none",
-      color: "white",
-      backgroundColor: "#113af1",
-      padding: "10px 45px",
-      fontSize: "14px",
-      fontFamily: "Ubuntu",
-      fontWeight: "600",
-      borderRadius: "5px",
-    }
-    const selectStyles = {
-      backgroundColor: "rgba(0,100,200,.2)",
-      borderRadius: "5px",
-      textAlignLast: "center",
-      fontFamily: "Ubuntu",
-      fontSize: "14px",
-      border: "none",
-    }
     return (
       <Layout title="For'm">
         <div
@@ -200,10 +183,10 @@ class IndexPage extends React.Component {
             justifyContent: "space-between",
           }}
         >
-          <Link to="post/create" style={topStyles}>
+          <Link to="post/create" className="create-post-button">
             Start a Discussion
           </Link>
-          <select style={selectStyles} onChange={this.sortBy}>
+          <select className="sort" onChange={this.sortBy}>
             <option value="title">Title</option>
             <option value="date">Date</option>
             <option value="likes">Likes</option>

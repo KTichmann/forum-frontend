@@ -49,36 +49,21 @@ const PostView = props => {
               />
             </div>
           </div>
-          <div className="post-main-content">
+          <div className="post-main-container">
             <span id="post-content">
               <ReactMarkdown source={props.post.post} />
             </span>
             <span
-              style={{
-                right: "0px",
-                bottom: "0px",
-                position: "absolute",
-                color: "rgba(17, 28, 121, 0.6)",
-                cursor: "pointer",
-                fontWeight: "600",
-                display: props.userCanEdit ? "block" : "none",
-              }}
+              className="post-options"
+              style={{ display: props.userCanEdit ? "block" : "none" }}
               onClick={() => (props.handleEdit ? props.handleEdit() : false)}
             >
               {props.editText}
             </span>
             <span
               id="delete-section"
-              className="posts"
-              style={{
-                right: "60px",
-                bottom: "0px",
-                position: "absolute",
-                color: "rgba(17, 28, 121, 0.6)",
-                cursor: "pointer",
-                fontWeight: "600",
-                display: props.userCanEdit ? "block" : "none",
-              }}
+              className="post-options posts"
+              style={{ display: props.userCanEdit ? "block" : "none" }}
               onClick={() =>
                 props.handleDelete ? props.handleDelete() : false
               }

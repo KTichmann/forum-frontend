@@ -7,6 +7,7 @@ import Input from "../../components/input"
 
 import "../../components/styles/loader.css"
 import "../../components/styles/post.css"
+import "../../components/styles/post-index-page.css"
 
 class PostPage extends React.Component {
   constructor(props) {
@@ -29,7 +30,7 @@ class PostPage extends React.Component {
     this.handlePostLike = this.handlePostLike.bind(this)
   }
 
-  componentWillMount() {
+  componentDidMount() {
     if (this.props.location.state) {
       this.post_id = this.props.location.state.post_id
     } else {
@@ -216,17 +217,6 @@ class PostPage extends React.Component {
   }
 
   formatComments(commentArr) {
-    const editStyle = {
-      bottom: "0%",
-      right: "5%",
-      fontFamily: "Ubuntu, sans-serif",
-      position: "absolute",
-      color: "rgba(17, 28, 121, 0.6)",
-      cursor: "pointer",
-      fontWeight: "600",
-      fontSize: ".85rem",
-    }
-
     return commentArr.map(commentObj => {
       let commentLikes = this.state.commentLikes.filter(
         obj => obj.id == commentObj.comment_id
@@ -248,7 +238,6 @@ class PostPage extends React.Component {
           commentObj.username ? (
             <span
               className="comment-edit"
-              style={editStyle}
               onClick={() => {
                 this.editComment(commentObj.comment_id)
               }}
@@ -261,8 +250,7 @@ class PostPage extends React.Component {
           {this.state.editingComment === commentObj.comment_id ? (
             <div id="delete-section" className="comments">
               <span
-                className="comment-delete"
-                style={{ ...editStyle, right: "6rem" }}
+                className="comment-delete comment-edit"
                 onClick={() => {
                   this.handleDelete(commentObj.comment_id)
                 }}
@@ -326,11 +314,11 @@ class PostPage extends React.Component {
 
   handleDelete(id, type = "comments") {
     document.querySelector(`#delete-section.${type}`).innerHTML += `
-            <div class="deleteConfirmation" style="z-index: 1000; position: fixed; top: 40%; left: 50%; transform: translateX(-50%); background-color: rgba(100, 100, 255, 1); padding: 2rem; border-radius: 5px; box-shadow: 1px 1px 1px 1px rgba(0,0,0,.5); font-family: Ubuntu">
+            <div class="deleteConfirmation">
                 <div style="margin-bottom: 1rem">Are you sure you want to delete?</div>
-                <div style="display: flex; justify-content: space-around;">
-                    <button style="cursor: pointer; padding: 5px 20px; border-radius: 4px; border: none; box-shadow: 2px 2px 2px 2px rgba(0,0,0,.3); background-color: #4BB543; width: 40%" id="keepButton">Keep</button>
-                    <button style="cursor: pointer; padding: 5px 20px; border-radius: 4px; border: none; box-shadow: 2px 2px 2px 2px rgba(0,0,0,.3); background-color: #FF2323; width: 40%" id="deleteButton">Delete</button>
+                <div class="deleteConfirmation-buttonHolder">
+                    <button class="deleteConfirmation-button" id="keepButton">Keep</button>
+                    <button class="deleteConfirmation-button" id="deleteButton">Delete</button>
                 </div>
             </div>
         `
@@ -474,24 +462,28 @@ class PostPage extends React.Component {
           <div className="loader">Loading...</div>
         )}
         {this.formatComments(this.state.comments)}
-        {sessionStorage.getItem("token") ? (
-          <Input
-            id={`post-${this.post_id}`}
-            buttonValue="Comment"
-            handleSubmit={this.handleAddComment}
-          />
+        {typeof sessionStorage !== "undefined" ? ( //for gatsby prod deployment
+          sessionStorage.getItem("token") ? (
+            <Input
+              id={`post-${this.post_id}`}
+              buttonValue="Comment"
+              handleSubmit={this.handleAddComment}
+            />
+          ) : (
+            <Input
+              handleSubmit={() => window.location.replace("/log-in")}
+              buttonValue="Log in"
+              textValue="Log in to comment"
+              textAreaStyle={{
+                pointerEvents: "none",
+                backgroundColor: "rgba(0,0,0,.1)",
+                padding: "1rem 1.5rem",
+                color: "rgba(0,0,0,.6)",
+              }}
+            />
+          )
         ) : (
-          <Input
-            handleSubmit={() => window.location.replace("/log-in")}
-            buttonValue="Log in"
-            textValue="Log in to comment"
-            textAreaStyle={{
-              pointerEvents: "none",
-              backgroundColor: "rgba(0,0,0,.1)",
-              padding: "1rem 1.5rem",
-              color: "rgba(0,0,0,.6)",
-            }}
-          />
+          false
         )}
       </Layout>
     )

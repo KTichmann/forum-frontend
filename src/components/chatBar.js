@@ -3,7 +3,12 @@ import Chat from "./chat"
 import "./styles/chatBar.css"
 
 const ChatBar = () => {
-  const auth = window.sessionStorage.getItem("token")
+  let auth
+
+  if (typeof window !== "undefined") {
+    //for gatsby build
+    auth = window.sessionStorage.getItem("token")
+  }
   const [showChat, setShowChat] = useState(false)
 
   const handleClick = () => {
@@ -11,7 +16,7 @@ const ChatBar = () => {
       setShowChat(true)
       document.getElementById("chatIcon").style.display = "none"
     } else {
-      window.location.replace("/login")
+      window.location.replace("/log-in")
     }
   }
 

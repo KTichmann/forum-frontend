@@ -1,0 +1,19 @@
+.create-post-button {
+  text-decoration: none;
+  color: white;
+  background-color: #113af1;
+  padding: 10px 45px;
+  font-size: 14px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 600;
+  border-radius: 5px;
+}
+
+.sort {
+  background-color: rgba(0, 100, 200, 0.2);
+  border-radius: 5px;
+  text-align-last: center;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 14px;
+  border: none;
+}

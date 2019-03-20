@@ -4,16 +4,19 @@ import React from "react"
 import "./styles/header.css"
 
 const Header = ({ siteTitle }) => {
-  window.addEventListener("scroll", () => {
-    let header = document.querySelector("header")
-    if (header) {
-      if (window.pageYOffset === 0) {
-        header.classList.remove("shadow")
-      } else if (!header.classList.contains("shadow")) {
-        header.classList.add("shadow")
+  if (typeof window !== "undefined") {
+    //if statement for gatsby build
+    window.addEventListener("scroll", () => {
+      let header = document.querySelector("header")
+      if (header) {
+        if (window.pageYOffset === 0) {
+          header.classList.remove("shadow")
+        } else if (!header.classList.contains("shadow")) {
+          header.classList.add("shadow")
+        }
       }
-    }
-  })
+    })
+  }
 
   return (
     <header>

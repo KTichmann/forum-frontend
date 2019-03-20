@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 
 import Layout from "../../components/layout"
 import Input from "../../components/input"
+import "../../components/styles/create-page.css"
 
 const Create = () => {
   const handleSubmit = (e, val) => {
@@ -32,27 +33,20 @@ const Create = () => {
 
   return (
     <Layout>
-      <input
-        id="title"
-        type="text"
-        placeholder="Title"
-        style={{
-          width: "100%",
-          marginBottom: "3rem",
-          padding: ".5rem",
-          fontFamily: "Ubuntu, sans-serif",
-          border: ".1px solid rgba(0,0,0, .1)",
-        }}
-      />
+      <input id="title" type="text" placeholder="Title" />
 
-      {sessionStorage.getItem("token") ? (
-        <Input
-          textAreaStyle={{ height: "60vh" }}
-          handleSubmit={handleSubmit}
-          buttonValue={"Post"}
-        />
+      {typeof sessionStorage !== "undefined" ? ( //check for sessionStorage to allow gatsby prod build
+        sessionStorage.getItem("token") ? (
+          <Input
+            textAreaStyle={{ height: "60vh" }}
+            handleSubmit={handleSubmit}
+            buttonValue={"Post"}
+          />
+        ) : (
+          window.location.replace("/log-in")
+        )
       ) : (
-        window.location.replace("/log-in")
+        false
       )}
       <Link id="redirect" to="/" style={{ display: "none" }} />
     </Layout>
