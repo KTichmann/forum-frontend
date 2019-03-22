@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import Chat from "./chat"
+
 import "./styles/chatBar.css"
 
 const ChatBar = () => {

@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import PropTypes from "prop-types"
 
 const Input = props => {
   const style = {
@@ -63,10 +64,26 @@ const Input = props => {
             : style.defaultButtonStyle
         }
       >
-        {props.buttonValue ? props.buttonValue : "Submit"}
+        {props.buttonValue}
       </button>
     </div>
   )
+}
+
+Input.propTypes = {
+  textValue: PropTypes.string,
+  id: PropTypes.string,
+  mainStyle: PropTypes.object,
+  textAreaStyle: PropTypes.object,
+  handleSubmit: PropTypes.func,
+  buttonStyle: PropTypes.object,
+  buttonValue: PropTypes.string,
+}
+
+Input.defaultProps = {
+  textValue: "",
+  id: 0,
+  buttonValue: "Submit",
 }
 
 export default Input

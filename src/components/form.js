@@ -1,6 +1,7 @@
 import React from "react"
 import Button from "@material-ui/core/Button"
 import TextField from "@material-ui/core/TextField"
+import PropTypes from "prop-types"
 
 const Form = props => (
   <form>
@@ -33,5 +34,19 @@ const Form = props => (
     </Button>
   </form>
 )
+
+Form.propTypes = {
+  usernameErrorMessage: PropTypes.string,
+  passwordErrorMessage: PropTypes.string,
+  usernameError: PropTypes.bool,
+  passwordError: PropTypes.bool,
+}
+
+Form.defaultProps = {
+  usernameErrorMessage: "Error",
+  passwordErrorMessage: "Error",
+  usernameError: false,
+  passwordError: false,
+}
 
 export default Form

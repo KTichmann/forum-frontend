@@ -223,6 +223,7 @@ class PostPage extends React.Component {
       )
       return (
         <div
+          key={commentObj.comment_id}
           id={`comment-${commentObj.comment_id}`}
           style={{ position: "relative" }}
         >
