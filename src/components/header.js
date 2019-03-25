@@ -32,8 +32,8 @@ const Header = ({ siteTitle }) => {
           </div>
         </div>
         <div className="menu">
-          <Link to="/sign-up">Sign Up</Link>
-          <Link to="/log-in">Log In</Link>
+          <Link to="/user/sign-up">Sign Up</Link>
+          <Link to="/user/log-in">Log In</Link>
         </div>
       </div>
     </header>

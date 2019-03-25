@@ -1,6 +1,6 @@
 import React from "react"
-import Layout from "../components/layout"
-import Form from "../components/form"
+import Layout from "../../components/layout"
+import Form from "../../components/form"
 
 class SignUpPage extends React.Component {
   constructor(props) {
@@ -52,7 +52,7 @@ class SignUpPage extends React.Component {
         .then(res => res.json())
         .then(res => {
           if (res.success) {
-            window.location.href = "/log-in?signup=true"
+            window.location.href = "/user/log-in?signup=true"
           } else if (res.message === "username taken") {
             this.setState({
               usernameError: true,

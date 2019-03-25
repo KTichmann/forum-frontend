@@ -43,7 +43,7 @@ const Create = () => {
             buttonValue={"Post"}
           />
         ) : (
-          window.location.replace("/log-in")
+          window.location.replace("/user/log-in")
         )
       ) : (
         false

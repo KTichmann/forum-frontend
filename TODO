@@ -17,7 +17,7 @@ Logged in users must be able to:
 - [] Unlike a post
 - [x] Like a comment
 - [x] Unlike a comment
-- [] Delete their own posts
+- [x] Delete their own posts
 - [x] Delete their own comments
 
 Logged in users must be prevented from:
@@ -25,9 +25,9 @@ Logged in users must be prevented from:
 - [x] Editing other people's comments
 
 GENERAL TODO: 
-- [] Implement post delete functionality
+- [x] Implement post delete functionality
 - [x] Implement comment edit functionality
-- [] Implement sorting on home page
+- [x] Implement sorting on home page
 - [x] Link logo to home page
 - [] About page
 - [x] Make comment textarea empty after comment posted
