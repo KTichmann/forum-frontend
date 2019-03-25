@@ -1,6 +1,8 @@
 import React from "react"
-import Layout from "../components/layout"
-import Form from "../components/form"
+import { Link } from "gatsby"
+import Layout from "../../components/layout"
+import Form from "../../components/form"
+import "../../components/styles/user.css"
 
 class LogInPage extends React.Component {
   constructor(props) {
@@ -70,14 +72,30 @@ class LogInPage extends React.Component {
     return (
       <Layout>
         <h1>Log In</h1>
-        <Form
-          usernameError={this.state.usernameError}
-          passwordError={this.state.passwordError}
-          usernameErrorMessage={this.state.usernameErrorMessage}
-          passwordErrorMessage={this.state.passwordErrorMessage}
-          handleClick={this.handleClick}
-          buttonText="Log In"
-        />
+        <div className="user-form">
+          {this.props.location.state ? (
+            this.props.location.state.signed_up ? (
+              <span id="signed-up-message">
+                You signed up successfully! Log in to start posting.
+              </span>
+            ) : (
+              false
+            )
+          ) : (
+            false
+          )}
+          <Form
+            usernameError={this.state.usernameError}
+            passwordError={this.state.passwordError}
+            usernameErrorMessage={this.state.usernameErrorMessage}
+            passwordErrorMessage={this.state.passwordErrorMessage}
+            handleClick={this.handleClick}
+            buttonText="Log In"
+          />
+          <div className="login-message">
+            Don't have an account? <Link to="/user/sign-up">Sign up here</Link>
+          </div>
+        </div>
       </Layout>
     )
   }
