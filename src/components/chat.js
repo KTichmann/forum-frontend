@@ -10,10 +10,10 @@ const Chat = props => {
       className="chat-container"
       style={{ display: display ? "inline-block" : "none" }}
     >
-      <div onClick={closeChat} className="close-button">
+      <div onClick={props.closeChat} className="close-button">
         x
       </div>
-      <iframe title="chatBox" id="chatBox" src={url} />
+      <iframe title="chatBox" id="chatBox" src={props.url} />
     </div>
   )
 }
