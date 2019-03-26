@@ -2,7 +2,7 @@ import React from "react"
 import "./styles/chat.css"
 
 const Chat = props => {
-  const url = `http://ktich-chat-app.herokuapp.com/?auth=${props.auth}`
+  const url = `https://ktich-chat-app.herokuapp.com/?auth=${props.auth}`
   return (
     <div
       className="chat-container"

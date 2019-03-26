@@ -52,7 +52,7 @@ class SignUpPage extends React.Component {
         .then(res => res.json())
         .then(res => {
           if (res.success) {
-            window.location.href = "/log-in?signup=true"
+            window.location.href = "/forum-frontend/log-in?signup=true"
           } else if (res.message === "username taken") {
             this.setState({
               usernameError: true,

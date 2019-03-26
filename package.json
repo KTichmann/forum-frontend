@@ -44,7 +44,7 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "deploy:github": "npm run build && node ./scripts/deploy-github",
+    "deploy:github": "npm run build --prefix-paths && node ./scripts/deploy-github",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "repository": {

@@ -16,7 +16,7 @@ const ChatBar = () => {
       setShowChat(true)
       document.getElementById("chatIcon").style.display = "none"
     } else {
-      window.location.replace("/log-in")
+      window.location.replace("/forum-frontend/log-in")
     }
   }
 
