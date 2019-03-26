@@ -1,0 +1,1605 @@
+{
+  "nodes": {
+    "SitePage /dev-404-page/": {
+      "path": "/dev-404-page/",
+      "id": "SitePage /dev-404-page/",
+      "parent": null,
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "f91d29e10ba680b413138cf9ed86e655",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "d48d1c52-fe48-53cb-8f08-aa4b47dde5a5": {
+      "resolve": "/home/wim/Documents/forum/forum-frontend/node_modules/gatsby/dist/internal-plugins/dev-404-page",
+      "id": "d48d1c52-fe48-53cb-8f08-aa4b47dde5a5",
+      "name": "dev-404-page",
+      "version": "1.0.0",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [
+        "createPagesStatefully"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/home/wim/Documents/forum/forum-frontend/node_modules/gatsby/dist/internal-plugins/dev-404-page",
+      "packageJson": {
+        "name": "dev-404-page",
+        "description": "Internal plugin to add a 404 page in development with helpful information",
+        "version": "1.0.0",
+        "main": "index.js",
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [],
+        "devDependencies": [],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": null,
+      "children": [],
+      "internal": {
+        "contentDigest": "bb6a4ed0f49c53323a2f877023366877",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "1fc32581-893a-55e8-8927-bcd667e2b700": {
+      "resolve": "/home/wim/Documents/forum/forum-frontend/node_modules/gatsby/dist/internal-plugins/load-babel-config",
+      "id": "1fc32581-893a-55e8-8927-bcd667e2b700",
+      "name": "load-babel-config",
+      "version": "1.0.0",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [
+        "onPreBootstrap"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/home/wim/Documents/forum/forum-frontend/node_modules/gatsby/dist/internal-plugins/load-babel-config",
+      "packageJson": {
+        "name": "load-babel-config",
+        "description": "Internal plugin that handles loading Babel configs",
+        "version": "1.0.0",
+        "main": "index.js",
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [],
+        "devDependencies": [],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": null,
+      "children": [],
+      "internal": {
+        "contentDigest": "dcbfebc011f36e79e0f277e99eaa76c5",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "a5079d69-ba80-53dc-82f9-0f440bd5448c": {
+      "resolve": "/home/wim/Documents/forum/forum-frontend/node_modules/gatsby/dist/internal-plugins/internal-data-bridge",
+      "id": "a5079d69-ba80-53dc-82f9-0f440bd5448c",
+      "name": "internal-data-bridge",
+      "version": "1.0.0",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [
+        "sourceNodes",
+        "onCreatePage"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/home/wim/Documents/forum/forum-frontend/node_modules/gatsby/dist/internal-plugins/internal-data-bridge",
+      "packageJson": {
+        "name": "internal-data-bridge",
+        "description": "An internal Gatsby plugin which creates data nodes from internal data",
+        "version": "1.0.0",
+        "main": "index.js",
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [],
+        "devDependencies": [],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": null,
+      "children": [],
+      "internal": {
+        "contentDigest": "467169ad99d7624633b8596a26b5a7b7",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "f795702c-a3b8-5a88-88ee-5d06019d44fa": {
+      "resolve": "/home/wim/Documents/forum/forum-frontend/node_modules/gatsby/dist/internal-plugins/prod-404",
+      "id": "f795702c-a3b8-5a88-88ee-5d06019d44fa",
+      "name": "prod-404",
+      "version": "1.0.0",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [
+        "onCreatePage"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/home/wim/Documents/forum/forum-frontend/node_modules/gatsby/dist/internal-plugins/prod-404",
+      "packageJson": {
+        "name": "prod-404",
+        "description": "Internal plugin to detect various flavors of 404 pages and ensure there's a 404.html path created as well to ensure compatability with static hosts",
+        "version": "1.0.0",
+        "main": "index.js",
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [],
+        "devDependencies": [],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": null,
+      "children": [],
+      "internal": {
+        "contentDigest": "0c95520646cf46042e12e185486ea3ea",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "84dad27f-1d44-51fc-ac56-4db2e5222995": {
+      "resolve": "/home/wim/Documents/forum/forum-frontend/node_modules/gatsby/dist/internal-plugins/query-runner",
+      "id": "84dad27f-1d44-51fc-ac56-4db2e5222995",
+      "name": "query-runner",
+      "version": "1.0.0",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [
+        "onCreatePage"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/home/wim/Documents/forum/forum-frontend/node_modules/gatsby/dist/internal-plugins/query-runner",
+      "packageJson": {
+        "name": "query-runner",
+        "description": "Internal plugin for running queries",
+        "version": "1.0.0",
+        "main": "index.js",
+        "author": "",
+        "license": "MIT",
+        "dependencies": [],
+        "devDependencies": [],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": null,
+      "children": [],
+      "internal": {
+        "contentDigest": "6ed3c1b929e51106c8acadddd0d8d8e6",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "6f4b2fa9-66b5-5205-a03f-140005a2cfe5": {
+      "resolve": "/home/wim/Documents/forum/forum-frontend/node_modules/gatsby/dist/internal-plugins/webpack-theme-component-shadowing",
+      "id": "6f4b2fa9-66b5-5205-a03f-140005a2cfe5",
+      "name": "webpack-theme-component-shadowing",
+      "version": "1.0.0",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [
+        "onCreateWebpackConfig"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/home/wim/Documents/forum/forum-frontend/node_modules/gatsby/dist/internal-plugins/webpack-theme-component-shadowing",
+      "packageJson": {
+        "name": "webpack-theme-component-shadowing",
+        "description": "An internal Gatsby plugin which handles configuring webpack to ensure theme components fall back from the user's site to theme modules.",
+        "version": "1.0.0",
+        "main": "index.js",
+        "author": "Chris Biscardi <chris@christopherbiscardi.com>",
+        "license": "MIT",
+        "dependencies": [],
+        "devDependencies": [],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": null,
+      "children": [],
+      "internal": {
+        "contentDigest": "bb402fa62167887aa5ecbac5cdf04056",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "1943ff2f-9c0c-558d-8d0c-006603e8106a": {
+      "resolve": "/home/wim/Documents/forum/forum-frontend/node_modules/gatsby-plugin-react-helmet",
+      "id": "1943ff2f-9c0c-558d-8d0c-006603e8106a",
+      "name": "gatsby-plugin-react-helmet",
+      "version": "3.0.7",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [],
+      "browserAPIs": [],
+      "ssrAPIs": [
+        "onRenderBody"
+      ],
+      "pluginFilepath": "/home/wim/Documents/forum/forum-frontend/node_modules/gatsby-plugin-react-helmet",
+      "packageJson": {
+        "name": "gatsby-plugin-react-helmet",
+        "description": "Manage document head data with react-helmet. Provides drop-in server rendering support for Gatsby.",
+        "version": "3.0.7",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin",
+          "favicon",
+          "react-helmet",
+          "seo",
+          "document",
+          "head",
+          "title",
+          "meta",
+          "link",
+          "script",
+          "base",
+          "noscript",
+          "style"
+        ],
+        "author": {
+          "name": "Kyle Mathews",
+          "email": "matthews.kyle@gmail.com"
+        },
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "@babel/runtime",
+            "version": "^7.0.0"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "@babel/cli",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/core",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "babel-preset-gatsby-package",
+            "version": "^0.1.3"
+          },
+          {
+            "name": "cross-env",
+            "version": "^5.1.4"
+          }
+        ],
+        "peerDependencies": [
+          {
+            "name": "gatsby",
+            "version": "^2.0.0"
+          },
+          {
+            "name": "react-helmet",
+            "version": "^5.1.3"
+          }
+        ],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": null,
+      "children": [],
+      "internal": {
+        "contentDigest": "d1995117f138e8337f7f281152228dc8",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "0114788b-b1b0-5625-b72f-f1cd908447e4": {
+      "resolve": "/home/wim/Documents/forum/forum-frontend/node_modules/gatsby-source-filesystem",
+      "id": "0114788b-b1b0-5625-b72f-f1cd908447e4",
+      "name": "gatsby-source-filesystem",
+      "version": "2.0.23",
+      "pluginOptions": {
+        "plugins": [],
+        "name": "images",
+        "path": "/home/wim/Documents/forum/forum-frontend/src/images"
+      },
+      "nodeAPIs": [
+        "sourceNodes",
+        "setFieldsOnGraphQLNodeType"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/home/wim/Documents/forum/forum-frontend/node_modules/gatsby-source-filesystem",
+      "packageJson": {
+        "name": "gatsby-source-filesystem",
+        "description": "Gatsby plugin which parses files within a directory for further parsing by other plugins",
+        "version": "2.0.23",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin"
+        ],
+        "author": {
+          "name": "Kyle Mathews",
+          "email": "mathews.kyle@gmail.com"
+        },
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "@babel/runtime",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "better-queue",
+            "version": "^3.8.7"
+          },
+          {
+            "name": "bluebird",
+            "version": "^3.5.0"
+          },
+          {
+            "name": "chokidar",
+            "version": "^2.1.2"
+          },
+          {
+            "name": "file-type",
+            "version": "^10.2.0"
+          },
+          {
+            "name": "fs-extra",
+            "version": "^5.0.0"
+          },
+          {
+            "name": "got",
+            "version": "^7.1.0"
+          },
+          {
+            "name": "md5-file",
+            "version": "^3.1.1"
+          },
+          {
+            "name": "mime",
+            "version": "^2.2.0"
+          },
+          {
+            "name": "pretty-bytes",
+            "version": "^4.0.2"
+          },
+          {
+            "name": "progress",
+            "version": "^1.1.8"
+          },
+          {
+            "name": "read-chunk",
+            "version": "^3.0.0"
+          },
+          {
+            "name": "slash",
+            "version": "^1.0.0"
+          },
+          {
+            "name": "valid-url",
+            "version": "^1.0.9"
+          },
+          {
+            "name": "xstate",
+            "version": "^3.1.0"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "@babel/cli",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/core",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "babel-preset-gatsby-package",
+            "version": "^0.1.3"
+          },
+          {
+            "name": "cross-env",
+            "version": "^5.1.4"
+          }
+        ],
+        "peerDependencies": [
+          {
+            "name": "gatsby",
+            "version": "^2.0.0"
+          }
+        ],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": null,
+      "children": [],
+      "internal": {
+        "contentDigest": "559e47b4dd638fce433e61cd79ed1488",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "da3d06eb-685e-5c77-ae1d-750eb6a2e4a9": {
+      "resolve": "/home/wim/Documents/forum/forum-frontend/node_modules/gatsby-transformer-sharp",
+      "id": "da3d06eb-685e-5c77-ae1d-750eb6a2e4a9",
+      "name": "gatsby-transformer-sharp",
+      "version": "2.1.14",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [
+        "onCreateNode",
+        "setFieldsOnGraphQLNodeType",
+        "onPreExtractQueries"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/home/wim/Documents/forum/forum-frontend/node_modules/gatsby-transformer-sharp",
+      "packageJson": {
+        "name": "gatsby-transformer-sharp",
+        "description": "Gatsby transformer plugin for images using Sharp",
+        "version": "2.1.14",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin",
+          "image",
+          "sharp"
+        ],
+        "author": {
+          "name": "Kyle Mathews",
+          "email": "mathews.kyle@gmail.com"
+        },
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "@babel/runtime",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "bluebird",
+            "version": "^3.5.0"
+          },
+          {
+            "name": "fs-extra",
+            "version": "^4.0.2"
+          },
+          {
+            "name": "potrace",
+            "version": "^2.1.1"
+          },
+          {
+            "name": "probe-image-size",
+            "version": "^4.0.0"
+          },
+          {
+            "name": "sharp",
+            "version": "^0.21.3"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "@babel/cli",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/core",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "babel-preset-gatsby-package",
+            "version": "^0.1.3"
+          },
+          {
+            "name": "cross-env",
+            "version": "^5.1.4"
+          }
+        ],
+        "peerDependencies": [
+          {
+            "name": "gatsby",
+            "version": "^2.0.33"
+          },
+          {
+            "name": "gatsby-plugin-sharp",
+            "version": "^2.0.0-beta.3"
+          }
+        ],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": null,
+      "children": [],
+      "internal": {
+        "contentDigest": "968d0b6adb02c53ed41c7d4c3f25f571",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "84d6154d-4241-556c-a679-cc8339cac100": {
+      "resolve": "/home/wim/Documents/forum/forum-frontend/node_modules/gatsby-plugin-sharp",
+      "id": "84d6154d-4241-556c-a679-cc8339cac100",
+      "name": "gatsby-plugin-sharp",
+      "version": "2.0.22",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [
+        "onPreInit"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/home/wim/Documents/forum/forum-frontend/node_modules/gatsby-plugin-sharp",
+      "packageJson": {
+        "name": "gatsby-plugin-sharp",
+        "description": "Wrapper of the Sharp image manipulation library for Gatsby plugins",
+        "version": "2.0.22",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin",
+          "image",
+          "sharp"
+        ],
+        "author": {
+          "name": "Kyle Mathews",
+          "email": "mathews.kyle@gmail.com"
+        },
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "@babel/runtime",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "async",
+            "version": "^2.1.2"
+          },
+          {
+            "name": "bluebird",
+            "version": "^3.5.0"
+          },
+          {
+            "name": "fs-exists-cached",
+            "version": "^1.0.0"
+          },
+          {
+            "name": "fs-extra",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "imagemin",
+            "version": "^6.0.0"
+          },
+          {
+            "name": "imagemin-mozjpeg",
+            "version": "^8.0.0"
+          },
+          {
+            "name": "imagemin-pngquant",
+            "version": "^6.0.0"
+          },
+          {
+            "name": "imagemin-webp",
+            "version": "^5.0.0"
+          },
+          {
+            "name": "lodash",
+            "version": "^4.17.10"
+          },
+          {
+            "name": "mini-svg-data-uri",
+            "version": "^1.0.0"
+          },
+          {
+            "name": "potrace",
+            "version": "^2.1.1"
+          },
+          {
+            "name": "probe-image-size",
+            "version": "^4.0.0"
+          },
+          {
+            "name": "progress",
+            "version": "^1.1.8"
+          },
+          {
+            "name": "sharp",
+            "version": "^0.21.3"
+          },
+          {
+            "name": "svgo",
+            "version": "^0.7.2"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "@babel/cli",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/core",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "babel-preset-gatsby-package",
+            "version": "^0.1.3"
+          },
+          {
+            "name": "cross-env",
+            "version": "^5.1.4"
+          }
+        ],
+        "peerDependencies": [
+          {
+            "name": "gatsby",
+            "version": "^2.0.0"
+          }
+        ],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": null,
+      "children": [],
+      "internal": {
+        "contentDigest": "8302442d99e3683d8834fa138a0bb34c",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "112c12f8-b222-509b-abe0-dfe93a905df9": {
+      "resolve": "/home/wim/Documents/forum/forum-frontend/node_modules/gatsby-plugin-manifest",
+      "id": "112c12f8-b222-509b-abe0-dfe93a905df9",
+      "name": "gatsby-plugin-manifest",
+      "version": "2.0.19",
+      "pluginOptions": {
+        "plugins": [],
+        "name": "gatsby-starter-default",
+        "short_name": "starter",
+        "start_url": "/",
+        "background_color": "#663399",
+        "theme_color": "#663399",
+        "display": "minimal-ui",
+        "icon": "src/images/gatsby-icon.png"
+      },
+      "nodeAPIs": [
+        "onPostBootstrap"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [
+        "onRenderBody"
+      ],
+      "pluginFilepath": "/home/wim/Documents/forum/forum-frontend/node_modules/gatsby-plugin-manifest",
+      "packageJson": {
+        "name": "gatsby-plugin-manifest",
+        "description": "Gatsby plugin which adds a manifest.webmanifest to make sites progressive web apps",
+        "version": "2.0.19",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin",
+          "favicon",
+          "icons",
+          "manifest.webmanifest",
+          "progressive-web-app",
+          "pwa"
+        ],
+        "author": {
+          "name": "Kyle Mathews",
+          "email": "mathews.kyle@gmail.com"
+        },
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "@babel/runtime",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "bluebird",
+            "version": "^3.5.0"
+          },
+          {
+            "name": "sharp",
+            "version": "^0.21.3"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "@babel/cli",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/core",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "babel-preset-gatsby-package",
+            "version": "^0.1.3"
+          },
+          {
+            "name": "cross-env",
+            "version": "^5.1.4"
+          }
+        ],
+        "peerDependencies": [
+          {
+            "name": "gatsby",
+            "version": "^2.0.0"
+          }
+        ],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": null,
+      "children": [],
+      "internal": {
+        "contentDigest": "67e1e0813ac9de47b8d3fa41e699da10",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "7374ebf2-d961-52ee-92a2-c25e7cb387a9": {
+      "resolve": "/home/wim/Documents/forum/forum-frontend",
+      "id": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
+      "name": "default-site-plugin",
+      "version": "635a3ee688ee4f3b93b636a400ec0083",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/home/wim/Documents/forum/forum-frontend",
+      "packageJson": {
+        "name": "Forum-Frontend",
+        "description": "A simple forum app that talks to an api backend",
+        "version": "0.1.0",
+        "keywords": [
+          "gatsby"
+        ],
+        "author": "Ktichmann",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "@dicebear/avatars",
+            "version": "^3.0.6"
+          },
+          {
+            "name": "@dicebear/avatars-avataaars-sprites",
+            "version": "^1.0.9"
+          },
+          {
+            "name": "@dicebear/avatars-gridy-sprites",
+            "version": "^1.0.11"
+          },
+          {
+            "name": "@dicebear/avatars-male-sprites",
+            "version": "^2.0.6"
+          },
+          {
+            "name": "@fortawesome/free-regular-svg-icons",
+            "version": "^5.7.2"
+          },
+          {
+            "name": "@material-ui/core",
+            "version": "^3.9.2"
+          },
+          {
+            "name": "font-awesome",
+            "version": "^4.7.0"
+          },
+          {
+            "name": "gatsby",
+            "version": "^2.1.18"
+          },
+          {
+            "name": "gatsby-image",
+            "version": "^2.0.30"
+          },
+          {
+            "name": "gatsby-plugin-manifest",
+            "version": "^2.0.19"
+          },
+          {
+            "name": "gatsby-plugin-offline",
+            "version": "^2.0.24"
+          },
+          {
+            "name": "gatsby-plugin-react-helmet",
+            "version": "^3.0.7"
+          },
+          {
+            "name": "gatsby-plugin-sharp",
+            "version": "^2.0.22"
+          },
+          {
+            "name": "gatsby-source-filesystem",
+            "version": "^2.0.23"
+          },
+          {
+            "name": "gatsby-transformer-sharp",
+            "version": "^2.1.14"
+          },
+          {
+            "name": "moment",
+            "version": "^2.24.0"
+          },
+          {
+            "name": "package.json",
+            "version": "^2.0.1"
+          },
+          {
+            "name": "prop-types",
+            "version": "^15.7.2"
+          },
+          {
+            "name": "react",
+            "version": "^16.8.3"
+          },
+          {
+            "name": "react-dom",
+            "version": "^16.8.3"
+          },
+          {
+            "name": "react-helmet",
+            "version": "^5.2.0"
+          },
+          {
+            "name": "react-markdown",
+            "version": "^4.0.6"
+          },
+          {
+            "name": "socket.io-client",
+            "version": "^2.2.0"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "@fortawesome/fontawesome-free",
+            "version": "^5.7.2"
+          },
+          {
+            "name": "gh-pages",
+            "version": "^2.0.1"
+          },
+          {
+            "name": "prettier",
+            "version": "^1.16.4"
+          }
+        ],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": null,
+      "children": [],
+      "internal": {
+        "contentDigest": "08831da5859ba73cd2d3efe9f78c711d",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "37112723-cdc9-5ee5-bf7f-9c937f997310": {
+      "resolve": "/home/wim/Documents/forum/forum-frontend/node_modules/gatsby-plugin-page-creator",
+      "id": "37112723-cdc9-5ee5-bf7f-9c937f997310",
+      "name": "gatsby-plugin-page-creator",
+      "version": "2.0.8",
+      "pluginOptions": {
+        "plugins": [],
+        "path": "/home/wim/Documents/forum/forum-frontend/src/pages",
+        "pathCheck": false
+      },
+      "nodeAPIs": [
+        "createPagesStatefully"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/home/wim/Documents/forum/forum-frontend/node_modules/gatsby-plugin-page-creator",
+      "packageJson": {
+        "name": "gatsby-plugin-page-creator",
+        "description": "Gatsby plugin that automatically creates pages from React components in specified directories",
+        "version": "2.0.8",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin"
+        ],
+        "author": {
+          "name": "Kyle Mathews",
+          "email": "mathews.kyle@gmail.com"
+        },
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "@babel/runtime",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "bluebird",
+            "version": "^3.5.0"
+          },
+          {
+            "name": "chokidar",
+            "version": "^2.1.2"
+          },
+          {
+            "name": "fs-exists-cached",
+            "version": "^1.0.0"
+          },
+          {
+            "name": "glob",
+            "version": "^7.1.1"
+          },
+          {
+            "name": "lodash",
+            "version": "^4.17.10"
+          },
+          {
+            "name": "micromatch",
+            "version": "^3.1.10"
+          },
+          {
+            "name": "parse-filepath",
+            "version": "^1.0.1"
+          },
+          {
+            "name": "slash",
+            "version": "^1.0.0"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "@babel/cli",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/core",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "babel-preset-gatsby-package",
+            "version": "^0.1.3"
+          },
+          {
+            "name": "cross-env",
+            "version": "^5.0.5"
+          }
+        ],
+        "peerDependencies": [
+          {
+            "name": "gatsby",
+            "version": "^2.0.0"
+          }
+        ],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": null,
+      "children": [],
+      "internal": {
+        "contentDigest": "ee094908fad75b919fa58ea9e5df0b6b",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Site": {
+      "siteMetadata": {
+        "title": "Gatsby Default Starter",
+        "description": "Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.",
+        "author": "@gatsbyjs"
+      },
+      "pathPrefix": "/forum-frontend",
+      "polyfill": true,
+      "buildTime": "2019-03-26T21:11:18.593Z",
+      "id": "Site",
+      "parent": null,
+      "children": [],
+      "internal": {
+        "contentDigest": "324bfaffe476d2ea9981fb841c28bc5d",
+        "type": "Site",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "d46afef6-b2d6-5c00-af16-3d7ad3cd4eee": {
+      "id": "d46afef6-b2d6-5c00-af16-3d7ad3cd4eee",
+      "children": [],
+      "parent": null,
+      "internal": {
+        "contentDigest": "86382962145cc92a5135ded4c89e9996",
+        "type": "Directory",
+        "description": "Directory \"src/images\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "images",
+      "absolutePath": "/home/wim/Documents/forum/forum-frontend/src/images",
+      "relativePath": "",
+      "extension": "",
+      "size": 4096,
+      "prettySize": "4.1 kB",
+      "modifiedTime": "2019-03-26T21:07:21.131Z",
+      "accessTime": "2019-03-26T21:07:21.151Z",
+      "changeTime": "2019-03-26T21:07:21.131Z",
+      "birthTime": "2019-03-26T21:07:21.131Z",
+      "root": "/",
+      "dir": "/home/wim/Documents/forum/forum-frontend/src",
+      "base": "images",
+      "ext": "",
+      "name": "images",
+      "relativeDirectory": "..",
+      "dev": 2049,
+      "mode": 16877,
+      "nlink": 2,
+      "uid": 0,
+      "gid": 0,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 11415972,
+      "blocks": 8,
+      "atimeMs": 1553634441150.521,
+      "mtimeMs": 1553634441130.5217,
+      "ctimeMs": 1553634441130.5217,
+      "birthtimeMs": 1553634441130.5217,
+      "atime": "2019-03-26T21:07:21.151Z",
+      "mtime": "2019-03-26T21:07:21.131Z",
+      "ctime": "2019-03-26T21:07:21.131Z",
+      "birthtime": "2019-03-26T21:07:21.131Z"
+    },
+    "1f9a2f5a-2d03-5801-b47c-ed0e1ceb2a53": {
+      "id": "1f9a2f5a-2d03-5801-b47c-ed0e1ceb2a53",
+      "children": [
+        "78521cd5-1e8b-5cee-8e88-d7d99fb0f0fc"
+      ],
+      "parent": null,
+      "internal": {
+        "contentDigest": "02960a71a6036f4637430b456e3bf664",
+        "type": "File",
+        "mediaType": "image/png",
+        "description": "File \"src/images/chat.png\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "images",
+      "absolutePath": "/home/wim/Documents/forum/forum-frontend/src/images/chat.png",
+      "relativePath": "chat.png",
+      "extension": "png",
+      "size": 1089,
+      "prettySize": "1.09 kB",
+      "modifiedTime": "2019-03-26T21:07:21.127Z",
+      "accessTime": "2019-03-26T21:07:23.666Z",
+      "changeTime": "2019-03-26T21:07:21.127Z",
+      "birthTime": "2019-03-26T21:07:21.127Z",
+      "root": "/",
+      "dir": "/home/wim/Documents/forum/forum-frontend/src/images",
+      "base": "chat.png",
+      "ext": ".png",
+      "name": "chat",
+      "relativeDirectory": "",
+      "dev": 2049,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 0,
+      "gid": 0,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 11415973,
+      "blocks": 8,
+      "atimeMs": 1553634443666.4587,
+      "mtimeMs": 1553634441126.5217,
+      "ctimeMs": 1553634441126.5217,
+      "birthtimeMs": 1553634441126.5217,
+      "atime": "2019-03-26T21:07:23.666Z",
+      "mtime": "2019-03-26T21:07:21.127Z",
+      "ctime": "2019-03-26T21:07:21.127Z",
+      "birthtime": "2019-03-26T21:07:21.127Z"
+    },
+    "b7dcaa6c-0a59-5a8d-9628-8f5a25bd23bf": {
+      "id": "b7dcaa6c-0a59-5a8d-9628-8f5a25bd23bf",
+      "children": [
+        "95fbe0b9-bb79-5e88-9e4c-87d7ca2b8bad"
+      ],
+      "parent": null,
+      "internal": {
+        "contentDigest": "4df5bccb35817d41796f95806b14bad1",
+        "type": "File",
+        "mediaType": "image/png",
+        "description": "File \"src/images/comments.png\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "images",
+      "absolutePath": "/home/wim/Documents/forum/forum-frontend/src/images/comments.png",
+      "relativePath": "comments.png",
+      "extension": "png",
+      "size": 1088,
+      "prettySize": "1.09 kB",
+      "modifiedTime": "2019-03-26T21:07:21.127Z",
+      "accessTime": "2019-03-26T21:07:23.666Z",
+      "changeTime": "2019-03-26T21:07:21.127Z",
+      "birthTime": "2019-03-26T21:07:21.127Z",
+      "root": "/",
+      "dir": "/home/wim/Documents/forum/forum-frontend/src/images",
+      "base": "comments.png",
+      "ext": ".png",
+      "name": "comments",
+      "relativeDirectory": "",
+      "dev": 2049,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 0,
+      "gid": 0,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 11415974,
+      "blocks": 8,
+      "atimeMs": 1553634443666.4587,
+      "mtimeMs": 1553634441126.5217,
+      "ctimeMs": 1553634441126.5217,
+      "birthtimeMs": 1553634441126.5217,
+      "atime": "2019-03-26T21:07:23.666Z",
+      "mtime": "2019-03-26T21:07:21.127Z",
+      "ctime": "2019-03-26T21:07:21.127Z",
+      "birthtime": "2019-03-26T21:07:21.127Z"
+    },
+    "321efe75-366a-52eb-97ba-59133beb2245": {
+      "id": "321efe75-366a-52eb-97ba-59133beb2245",
+      "children": [
+        "2e3aa2e1-26d2-5bbc-a9b0-bcf8d6bcd446"
+      ],
+      "parent": null,
+      "internal": {
+        "contentDigest": "4a8215e9f877f0a27498b9f262cbcec1",
+        "type": "File",
+        "mediaType": "image/png",
+        "description": "File \"src/images/delete.png\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "images",
+      "absolutePath": "/home/wim/Documents/forum/forum-frontend/src/images/delete.png",
+      "relativePath": "delete.png",
+      "extension": "png",
+      "size": 235,
+      "prettySize": "235 B",
+      "modifiedTime": "2019-03-26T21:07:21.127Z",
+      "accessTime": "2019-03-26T21:07:23.666Z",
+      "changeTime": "2019-03-26T21:07:21.127Z",
+      "birthTime": "2019-03-26T21:07:21.127Z",
+      "root": "/",
+      "dir": "/home/wim/Documents/forum/forum-frontend/src/images",
+      "base": "delete.png",
+      "ext": ".png",
+      "name": "delete",
+      "relativeDirectory": "",
+      "dev": 2049,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 0,
+      "gid": 0,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 11415975,
+      "blocks": 8,
+      "atimeMs": 1553634443666.4587,
+      "mtimeMs": 1553634441126.5217,
+      "ctimeMs": 1553634441126.5217,
+      "birthtimeMs": 1553634441126.5217,
+      "atime": "2019-03-26T21:07:23.666Z",
+      "mtime": "2019-03-26T21:07:21.127Z",
+      "ctime": "2019-03-26T21:07:21.127Z",
+      "birthtime": "2019-03-26T21:07:21.127Z"
+    },
+    "d8bcfd5a-1c0b-53e4-8924-65a75346edaa": {
+      "id": "d8bcfd5a-1c0b-53e4-8924-65a75346edaa",
+      "children": [
+        "8549f94e-acc0-5405-bff9-bbd2efed630c"
+      ],
+      "parent": null,
+      "internal": {
+        "contentDigest": "4a9773549091c227cd2eb82ccd9c5e3a",
+        "type": "File",
+        "mediaType": "image/png",
+        "description": "File \"src/images/gatsby-icon.png\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "images",
+      "absolutePath": "/home/wim/Documents/forum/forum-frontend/src/images/gatsby-icon.png",
+      "relativePath": "gatsby-icon.png",
+      "extension": "png",
+      "size": 21212,
+      "prettySize": "21.2 kB",
+      "modifiedTime": "2019-03-26T21:07:21.131Z",
+      "accessTime": "2019-03-26T21:07:23.670Z",
+      "changeTime": "2019-03-26T21:07:21.131Z",
+      "birthTime": "2019-03-26T21:07:21.131Z",
+      "root": "/",
+      "dir": "/home/wim/Documents/forum/forum-frontend/src/images",
+      "base": "gatsby-icon.png",
+      "ext": ".png",
+      "name": "gatsby-icon",
+      "relativeDirectory": "",
+      "dev": 2049,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 0,
+      "gid": 0,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 11415977,
+      "blocks": 48,
+      "atimeMs": 1553634443670.4587,
+      "mtimeMs": 1553634441130.5217,
+      "ctimeMs": 1553634441130.5217,
+      "birthtimeMs": 1553634441130.5217,
+      "atime": "2019-03-26T21:07:23.670Z",
+      "mtime": "2019-03-26T21:07:21.131Z",
+      "ctime": "2019-03-26T21:07:21.131Z",
+      "birthtime": "2019-03-26T21:07:21.131Z"
+    },
+    "8f76a208-9fbc-5465-84d0-2b4ad7d66de6": {
+      "id": "8f76a208-9fbc-5465-84d0-2b4ad7d66de6",
+      "children": [
+        "5deb217d-234e-520e-8255-7f96fb29cf12"
+      ],
+      "parent": null,
+      "internal": {
+        "contentDigest": "baa068e300882cfc103617c119526cab",
+        "type": "File",
+        "mediaType": "image/png",
+        "description": "File \"src/images/likes.png\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "images",
+      "absolutePath": "/home/wim/Documents/forum/forum-frontend/src/images/likes.png",
+      "relativePath": "likes.png",
+      "extension": "png",
+      "size": 856,
+      "prettySize": "856 B",
+      "modifiedTime": "2019-03-26T21:07:21.131Z",
+      "accessTime": "2019-03-26T21:07:23.670Z",
+      "changeTime": "2019-03-26T21:07:21.131Z",
+      "birthTime": "2019-03-26T21:07:21.131Z",
+      "root": "/",
+      "dir": "/home/wim/Documents/forum/forum-frontend/src/images",
+      "base": "likes.png",
+      "ext": ".png",
+      "name": "likes",
+      "relativeDirectory": "",
+      "dev": 2049,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 0,
+      "gid": 0,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 11415978,
+      "blocks": 8,
+      "atimeMs": 1553634443670.4587,
+      "mtimeMs": 1553634441130.5217,
+      "ctimeMs": 1553634441130.5217,
+      "birthtimeMs": 1553634441130.5217,
+      "atime": "2019-03-26T21:07:23.670Z",
+      "mtime": "2019-03-26T21:07:21.131Z",
+      "ctime": "2019-03-26T21:07:21.131Z",
+      "birthtime": "2019-03-26T21:07:21.131Z"
+    },
+    "78521cd5-1e8b-5cee-8e88-d7d99fb0f0fc": {
+      "id": "78521cd5-1e8b-5cee-8e88-d7d99fb0f0fc",
+      "children": [],
+      "parent": "1f9a2f5a-2d03-5801-b47c-ed0e1ceb2a53",
+      "internal": {
+        "contentDigest": "02960a71a6036f4637430b456e3bf664",
+        "type": "ImageSharp",
+        "owner": "gatsby-transformer-sharp"
+      }
+    },
+    "95fbe0b9-bb79-5e88-9e4c-87d7ca2b8bad": {
+      "id": "95fbe0b9-bb79-5e88-9e4c-87d7ca2b8bad",
+      "children": [],
+      "parent": "b7dcaa6c-0a59-5a8d-9628-8f5a25bd23bf",
+      "internal": {
+        "contentDigest": "4df5bccb35817d41796f95806b14bad1",
+        "type": "ImageSharp",
+        "owner": "gatsby-transformer-sharp"
+      }
+    },
+    "2e3aa2e1-26d2-5bbc-a9b0-bcf8d6bcd446": {
+      "id": "2e3aa2e1-26d2-5bbc-a9b0-bcf8d6bcd446",
+      "children": [],
+      "parent": "321efe75-366a-52eb-97ba-59133beb2245",
+      "internal": {
+        "contentDigest": "4a8215e9f877f0a27498b9f262cbcec1",
+        "type": "ImageSharp",
+        "owner": "gatsby-transformer-sharp"
+      }
+    },
+    "8549f94e-acc0-5405-bff9-bbd2efed630c": {
+      "id": "8549f94e-acc0-5405-bff9-bbd2efed630c",
+      "children": [],
+      "parent": "d8bcfd5a-1c0b-53e4-8924-65a75346edaa",
+      "internal": {
+        "contentDigest": "4a9773549091c227cd2eb82ccd9c5e3a",
+        "type": "ImageSharp",
+        "owner": "gatsby-transformer-sharp"
+      }
+    },
+    "5deb217d-234e-520e-8255-7f96fb29cf12": {
+      "id": "5deb217d-234e-520e-8255-7f96fb29cf12",
+      "children": [],
+      "parent": "8f76a208-9fbc-5465-84d0-2b4ad7d66de6",
+      "internal": {
+        "contentDigest": "baa068e300882cfc103617c119526cab",
+        "type": "ImageSharp",
+        "owner": "gatsby-transformer-sharp"
+      }
+    },
+    "5bc5d14c-9726-5ea5-9f0b-266a3663d341": {
+      "id": "5bc5d14c-9726-5ea5-9f0b-266a3663d341",
+      "children": [
+        "01f59d34-927b-56d8-8e52-7aa2f92a82b4"
+      ],
+      "parent": null,
+      "internal": {
+        "contentDigest": "6d91c86c0fde632ba4cd01062fd9ccfa",
+        "type": "File",
+        "mediaType": "image/png",
+        "description": "File \"src/images/gatsby-astronaut.png\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "images",
+      "absolutePath": "/home/wim/Documents/forum/forum-frontend/src/images/gatsby-astronaut.png",
+      "relativePath": "gatsby-astronaut.png",
+      "extension": "png",
+      "size": 167273,
+      "prettySize": "167 kB",
+      "modifiedTime": "2019-03-26T21:07:21.131Z",
+      "accessTime": "2019-03-26T21:07:23.666Z",
+      "changeTime": "2019-03-26T21:07:21.131Z",
+      "birthTime": "2019-03-26T21:07:21.131Z",
+      "root": "/",
+      "dir": "/home/wim/Documents/forum/forum-frontend/src/images",
+      "base": "gatsby-astronaut.png",
+      "ext": ".png",
+      "name": "gatsby-astronaut",
+      "relativeDirectory": "",
+      "dev": 2049,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 0,
+      "gid": 0,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 11415976,
+      "blocks": 328,
+      "atimeMs": 1553634443666.4587,
+      "mtimeMs": 1553634441130.5217,
+      "ctimeMs": 1553634441130.5217,
+      "birthtimeMs": 1553634441130.5217,
+      "atime": "2019-03-26T21:07:23.666Z",
+      "mtime": "2019-03-26T21:07:21.131Z",
+      "ctime": "2019-03-26T21:07:21.131Z",
+      "birthtime": "2019-03-26T21:07:21.131Z"
+    },
+    "01f59d34-927b-56d8-8e52-7aa2f92a82b4": {
+      "id": "01f59d34-927b-56d8-8e52-7aa2f92a82b4",
+      "children": [],
+      "parent": "5bc5d14c-9726-5ea5-9f0b-266a3663d341",
+      "internal": {
+        "contentDigest": "6d91c86c0fde632ba4cd01062fd9ccfa",
+        "type": "ImageSharp",
+        "owner": "gatsby-transformer-sharp"
+      }
+    },
+    "SitePage /404/": {
+      "jsonName": "404-22d",
+      "internalComponentName": "Component404",
+      "path": "/404/",
+      "component": "/home/wim/Documents/forum/forum-frontend/src/pages/404.js",
+      "componentChunkName": "component---src-pages-404-js",
+      "context": {},
+      "pluginCreator___NODE": "37112723-cdc9-5ee5-bf7f-9c937f997310",
+      "pluginCreatorId": "37112723-cdc9-5ee5-bf7f-9c937f997310",
+      "componentPath": "/home/wim/Documents/forum/forum-frontend/src/pages/404.js",
+      "id": "SitePage /404/",
+      "parent": null,
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "cb673ea0013fc80dd23e24a4532f8554",
+        "description": "37112723-cdc9-5ee5-bf7f-9c937f997310",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /": {
+      "jsonName": "index",
+      "internalComponentName": "ComponentIndex",
+      "path": "/",
+      "component": "/home/wim/Documents/forum/forum-frontend/src/pages/index.js",
+      "componentChunkName": "component---src-pages-index-js",
+      "context": {},
+      "pluginCreator___NODE": "37112723-cdc9-5ee5-bf7f-9c937f997310",
+      "pluginCreatorId": "37112723-cdc9-5ee5-bf7f-9c937f997310",
+      "componentPath": "/home/wim/Documents/forum/forum-frontend/src/pages/index.js",
+      "id": "SitePage /",
+      "parent": null,
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "228e5e50d677ef78badbc7b5ed7a4190",
+        "description": "37112723-cdc9-5ee5-bf7f-9c937f997310",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /post/create/": {
+      "jsonName": "post-create-178",
+      "internalComponentName": "ComponentPostCreate",
+      "path": "/post/create/",
+      "component": "/home/wim/Documents/forum/forum-frontend/src/pages/post/create.js",
+      "componentChunkName": "component---src-pages-post-create-js",
+      "context": {},
+      "pluginCreator___NODE": "37112723-cdc9-5ee5-bf7f-9c937f997310",
+      "pluginCreatorId": "37112723-cdc9-5ee5-bf7f-9c937f997310",
+      "componentPath": "/home/wim/Documents/forum/forum-frontend/src/pages/post/create.js",
+      "id": "SitePage /post/create/",
+      "parent": null,
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "250aed92aceb035c8e3266c1636dfe69",
+        "description": "37112723-cdc9-5ee5-bf7f-9c937f997310",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /post/": {
+      "jsonName": "post-0e1",
+      "internalComponentName": "ComponentPost",
+      "path": "/post/",
+      "component": "/home/wim/Documents/forum/forum-frontend/src/pages/post/index.js",
+      "componentChunkName": "component---src-pages-post-index-js",
+      "context": {},
+      "pluginCreator___NODE": "37112723-cdc9-5ee5-bf7f-9c937f997310",
+      "pluginCreatorId": "37112723-cdc9-5ee5-bf7f-9c937f997310",
+      "componentPath": "/home/wim/Documents/forum/forum-frontend/src/pages/post/index.js",
+      "id": "SitePage /post/",
+      "parent": null,
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "abb928e0908ee839d569017019ab37a4",
+        "description": "37112723-cdc9-5ee5-bf7f-9c937f997310",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /user/log-in/": {
+      "jsonName": "user-log-in-5c7",
+      "internalComponentName": "ComponentUserLogIn",
+      "path": "/user/log-in/",
+      "component": "/home/wim/Documents/forum/forum-frontend/src/pages/user/log-in.js",
+      "componentChunkName": "component---src-pages-user-log-in-js",
+      "context": {},
+      "pluginCreator___NODE": "37112723-cdc9-5ee5-bf7f-9c937f997310",
+      "pluginCreatorId": "37112723-cdc9-5ee5-bf7f-9c937f997310",
+      "componentPath": "/home/wim/Documents/forum/forum-frontend/src/pages/user/log-in.js",
+      "id": "SitePage /user/log-in/",
+      "parent": null,
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "26c7d9ab06c33de2db51c8fbdf3afbda",
+        "description": "37112723-cdc9-5ee5-bf7f-9c937f997310",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /user/sign-up/": {
+      "jsonName": "user-sign-up-075",
+      "internalComponentName": "ComponentUserSignUp",
+      "path": "/user/sign-up/",
+      "component": "/home/wim/Documents/forum/forum-frontend/src/pages/user/sign-up.js",
+      "componentChunkName": "component---src-pages-user-sign-up-js",
+      "context": {},
+      "pluginCreator___NODE": "37112723-cdc9-5ee5-bf7f-9c937f997310",
+      "pluginCreatorId": "37112723-cdc9-5ee5-bf7f-9c937f997310",
+      "componentPath": "/home/wim/Documents/forum/forum-frontend/src/pages/user/sign-up.js",
+      "id": "SitePage /user/sign-up/",
+      "parent": null,
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "260a12c83d2d3b5f3a6ef2cc40ff74bb",
+        "description": "37112723-cdc9-5ee5-bf7f-9c937f997310",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /404.html": {
+      "jsonName": "404-html-516",
+      "internalComponentName": "Component404Html",
+      "path": "/404.html",
+      "component": "/home/wim/Documents/forum/forum-frontend/src/pages/404.js",
+      "componentChunkName": "component---src-pages-404-js",
+      "context": {},
+      "pluginCreator___NODE": "f795702c-a3b8-5a88-88ee-5d06019d44fa",
+      "pluginCreatorId": "f795702c-a3b8-5a88-88ee-5d06019d44fa",
+      "componentPath": "/home/wim/Documents/forum/forum-frontend/src/pages/404.js",
+      "id": "SitePage /404.html",
+      "parent": null,
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "608232f1b79b04a4c2fd38a5cf225744",
+        "description": "f795702c-a3b8-5a88-88ee-5d06019d44fa",
+        "owner": "internal-data-bridge"
+      }
+    }
+  },
+  "status": {
+    "plugins": {},
+    "PLUGINS_HASH": "1e980b0251934d7f6c343f4b2126a40c"
+  },
+  "componentDataDependencies": {
+    "nodes": {
+      "Site": [
+        "sq--src-components-layout-js"
+      ]
+    },
+    "connections": {}
+  },
+  "jsonDataPaths": {
+    "404-22d": "44/path---404-22-d-bce-NZuapzHg3X9TaN1iIixfv1W23E",
+    "sq--src-components-layout-js": 755544856,
+    "index": "173/path---index-6a9-NZuapzHg3X9TaN1iIixfv1W23E",
+    "log-in-ad0": "355/path---log-in-ad-0-a37-NZuapzHg3X9TaN1iIixfv1W23E",
+    "post-create-178": "478/path---post-create-178-167-NZuapzHg3X9TaN1iIixfv1W23E",
+    "post-0e1": "500/path---post-0-e-1-817-NZuapzHg3X9TaN1iIixfv1W23E",
+    "sign-up-684": "939/path---sign-up-684-533-NZuapzHg3X9TaN1iIixfv1W23E",
+    "404-html-516": "164/path---404-html-516-62a-NZuapzHg3X9TaN1iIixfv1W23E",
+    "dev-404-page-5f9": "920/path---dev-404-page-5-f-9-fab-NZuapzHg3X9TaN1iIixfv1W23E",
+    "user-log-in-5c7": "2/path---user-log-in-5-c-7-83e-NZuapzHg3X9TaN1iIixfv1W23E",
+    "user-sign-up-075": "382/path---user-sign-up-075-503-NZuapzHg3X9TaN1iIixfv1W23E"
+  },
+  "components": {
+    "/home/wim/Documents/forum/forum-frontend/src/pages/404.js": {
+      "query": "",
+      "componentPath": "/home/wim/Documents/forum/forum-frontend/src/pages/404.js"
+    },
+    "/home/wim/Documents/forum/forum-frontend/src/pages/index.js": {
+      "query": "",
+      "componentPath": "/home/wim/Documents/forum/forum-frontend/src/pages/index.js"
+    },
+    "/home/wim/Documents/forum/forum-frontend/src/pages/post/create.js": {
+      "query": "",
+      "componentPath": "/home/wim/Documents/forum/forum-frontend/src/pages/post/create.js"
+    },
+    "/home/wim/Documents/forum/forum-frontend/src/pages/post/index.js": {
+      "query": "",
+      "componentPath": "/home/wim/Documents/forum/forum-frontend/src/pages/post/index.js"
+    },
+    "/home/wim/Documents/forum/forum-frontend/src/pages/user/log-in.js": {
+      "query": "",
+      "componentPath": "/home/wim/Documents/forum/forum-frontend/src/pages/user/log-in.js"
+    },
+    "/home/wim/Documents/forum/forum-frontend/src/pages/user/sign-up.js": {
+      "query": "",
+      "componentPath": "/home/wim/Documents/forum/forum-frontend/src/pages/user/sign-up.js"
+    }
+  },
+  "staticQueryComponents": {
+    "sq--src-components-layout-js": {
+      "name": "SiteTitleQuery",
+      "componentPath": "/home/wim/Documents/forum/forum-frontend/src/components/layout.js",
+      "id": "sq--src-components-layout-js",
+      "jsonName": "sq--src-components-layout-js",
+      "query": "query SiteTitleQuery {\n  site {\n    siteMetadata {\n      title\n    }\n  }\n}\n",
+      "hash": 755544856
+    }
+  }
+}
