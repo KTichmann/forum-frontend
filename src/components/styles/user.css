@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+
+.user-form {
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.login-message {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 0.8rem;
+  text-align: center;
+  width: 100%;
+  padding-left: 2rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.login-message a {
+  color: rgba(17, 28, 121, 0.6);
+  text-decoration: none;
+}
+
+#signed-up-message {
+  width: 100%;
+  text-align: center;
+  padding-left: 3rem;
+  display: block;
+  width: 14rem;
+  font-size: 0.8rem;
+  font-family: "Ubuntu", sans-serif;
+  margin-right: 0;
+}

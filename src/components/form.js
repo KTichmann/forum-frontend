@@ -1,9 +1,10 @@
 import React from "react"
 import Button from "@material-ui/core/Button"
 import TextField from "@material-ui/core/TextField"
+import PropTypes from "prop-types"
 
 const Form = props => (
-  <form>
+  <form style={{ paddingLeft: "2rem" }}>
     <p>{props.usernameErrorMessage}</p>
     <TextField
       style={{ display: "block" }}
@@ -27,11 +28,26 @@ const Form = props => (
       variant="contained"
       color="primary"
       type="submit"
+      style={{ marginLeft: "8rem", marginTop: "1rem" }}
       onClick={e => props.handleClick(e)}
     >
       {props.buttonText}
     </Button>
   </form>
 )
+
+Form.propTypes = {
+  usernameErrorMessage: PropTypes.string,
+  passwordErrorMessage: PropTypes.string,
+  usernameError: PropTypes.bool,
+  passwordError: PropTypes.bool,
+}
+
+Form.defaultProps = {
+  usernameErrorMessage: "Error",
+  passwordErrorMessage: "Error",
+  usernameError: false,
+  passwordError: false,
+}
 
 export default Form

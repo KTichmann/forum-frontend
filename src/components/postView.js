@@ -5,6 +5,7 @@ import sprites from "@dicebear/avatars-male-sprites"
 import likesIcon from "../images/likes.png"
 import deleteIcon from "../images/delete.png"
 import ReactMarkdown from "react-markdown"
+import PropTypes from "prop-types"
 
 import "./styles/postView.css"
 
@@ -75,6 +76,25 @@ const PostView = props => {
       </div>
     </div>
   )
+}
+
+PostView.propTypes = {
+  post: PropTypes.object,
+  postLikes: PropTypes.string,
+  handleLike: PropTypes.func,
+  delete: PropTypes.bool,
+  userCanEdit: PropTypes.bool,
+  handleEdit: PropTypes.func,
+  editText: PropTypes.string,
+  handleDelete: PropTypes.func,
+  deleteText: PropTypes.string,
+}
+
+PostView.defaultProps = {
+  delete: false,
+  userCanEdit: false,
+  editText: "Edit",
+  deleteText: "Delete",
 }
 
 export default PostView

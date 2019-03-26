@@ -50,6 +50,7 @@ class IndexPage extends React.Component {
         to={`/post`}
         state={{ post_id: postObj.post_id }}
         style={{ textDecoration: "none" }}
+        key={postObj.post_id}
       >
         <ContentList
           id={postObj.post_id}
@@ -105,11 +106,6 @@ class IndexPage extends React.Component {
         this.setState({ likes: res.data })
         this.preparePosts(this.state.data)
       })
-  }
-
-  handleSubmit(e, val) {
-    console.log("e: ", e)
-    console.log("value: ", val)
   }
 
   sortBy(event) {

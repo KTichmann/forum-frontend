@@ -223,6 +223,7 @@ class PostPage extends React.Component {
       )
       return (
         <div
+          key={commentObj.comment_id}
           id={`comment-${commentObj.comment_id}`}
           style={{ position: "relative" }}
         >
@@ -471,7 +472,9 @@ class PostPage extends React.Component {
             />
           ) : (
             <Input
-              handleSubmit={() => window.location.replace("/forum-frontend/log-in")}
+              handleSubmit={() =>
+                window.location.replace("/forum-frontend/user/log-in")
+              }
               buttonValue="Log in"
               textValue="Log in to comment"
               textAreaStyle={{

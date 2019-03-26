@@ -1,7 +1,8 @@
 import React from "react"
-import Layout from "../components/layout"
-import Form from "../components/form"
-
+import { Link } from "gatsby"
+import Layout from "../../components/layout"
+import Form from "../../components/form"
+import "../../components/styles/user.css"
 class SignUpPage extends React.Component {
   constructor(props) {
     super(props)
@@ -52,7 +53,7 @@ class SignUpPage extends React.Component {
         .then(res => res.json())
         .then(res => {
           if (res.success) {
-            window.location.href = "/forum-frontend/log-in?signup=true"
+            document.getElementById("relocate").click()
           } else if (res.message === "username taken") {
             this.setState({
               usernameError: true,
@@ -71,13 +72,24 @@ class SignUpPage extends React.Component {
     return (
       <Layout>
         <h1>Sign Up</h1>
-        <Form
-          usernameError={this.state.usernameError}
-          passwordError={this.state.passwordError}
-          usernameErrorMessage={this.state.usernameErrorMessage}
-          passwordErrorMessage={this.state.passwordErrorMessage}
-          handleClick={this.handleClick}
-          buttonText="Sign Up"
+        <div className="user-form">
+          <Form
+            usernameError={this.state.usernameError}
+            passwordError={this.state.passwordError}
+            usernameErrorMessage={this.state.usernameErrorMessage}
+            passwordErrorMessage={this.state.passwordErrorMessage}
+            handleClick={this.handleClick}
+            buttonText="Sign Up"
+          />
+          <div className="login-message">
+            Already a user? <Link to="/user/log-in">Log in here</Link>
+          </div>
+        </div>
+        <Link
+          to="/user/log-in"
+          id="relocate"
+          state={{ signed_up: true }}
+          style={{ display: "none" }}
         />
       </Layout>
     )

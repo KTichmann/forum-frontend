@@ -6,7 +6,7 @@ ghpages.publish(
     branch: "gh-pages",
     repo: "https://github.com/KTichmann/forum-frontend.git",
   },
-  () => {
-    console.log("Deploy Complete!")
+  e => {
+    console.log(e)
   }
 )
