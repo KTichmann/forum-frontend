@@ -43,7 +43,7 @@ const Create = () => {
             buttonValue={"Post"}
           />
         ) : (
-          window.location.replace("/user/log-in")
+          window.location.replace("/forum-frontend/user/log-in")
         )
       ) : (
         false

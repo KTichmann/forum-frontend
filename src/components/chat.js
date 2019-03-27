@@ -3,14 +3,14 @@ import PropTypes from "prop-types"
 
 import "./styles/chat.css"
 
-const Chat = ({ auth, display, closeChat }) => {
-  const url = `http://ktich-chat-app.herokuapp.com/?auth=${auth}`
+const Chat = props => {
+  const url = `https://ktich-chat-app.herokuapp.com/?auth=${props.auth}`
   return (
     <div
       className="chat-container"
-      style={{ display: display ? "inline-block" : "none" }}
+      style={{ display: props.display ? "inline-block" : "none" }}
     >
-      <div onClick={closeChat} className="close-button">
+      <div onClick={props.closeChat} className="close-button">
         x
       </div>
       <iframe title="chatBox" id="chatBox" src={url} />

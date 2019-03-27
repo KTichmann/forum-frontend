@@ -54,7 +54,6 @@ class SignUpPage extends React.Component {
         .then(res => {
           if (res.success) {
             document.getElementById("relocate").click()
-            // window.location.href = "/user/log-in?signup=true"
           } else if (res.message === "username taken") {
             this.setState({
               usernameError: true,

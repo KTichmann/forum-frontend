@@ -472,7 +472,9 @@ class PostPage extends React.Component {
             />
           ) : (
             <Input
-              handleSubmit={() => window.location.replace("/user/log-in")}
+              handleSubmit={() =>
+                window.location.replace("/forum-frontend/user/log-in")
+              }
               buttonValue="Log in"
               textValue="Log in to comment"
               textAreaStyle={{

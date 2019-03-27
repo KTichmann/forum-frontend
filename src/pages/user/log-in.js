@@ -56,7 +56,7 @@ class LogInPage extends React.Component {
           if (res.success) {
             window.sessionStorage.setItem("token", res.token)
             window.sessionStorage.setItem("for-mUsername", username)
-            window.location.href = "/"
+            window.location.href = "/forum-frontend"
           } else {
             this.setState({
               usernameError: true,
