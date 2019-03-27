@@ -7,6 +7,19 @@ Logged out users must be able to:
 - [x] Sort posts by title
 - [x] Sort posts by number of likes
 
+Sign Up Process:
+- [x] User Inputs a username & email address
+- [x] Server checks if username is unique (rejects if not)
+- [] User is redirected to a 'thank you' page
+- [] User is sent an email with a verification link
+- [] User cannot log in until email address is verified
+- [] When unverified user tries to sign in, they get a reminder msg
+- [] When user clicks on verification link, they are allowed to log in
+
+User Profiles:
+- [] User can change password / email address
+- [] 
+
 Logged in users must be able to:
 - [x] Sign in using their password and username
 - [x] Make a new post
